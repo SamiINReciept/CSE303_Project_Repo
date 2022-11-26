@@ -1,0 +1,51 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins' sans-serif;
+    background-image: url(Images/background-5.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.sign-in-form
+{
+    width: 300px;
+    box-shadow: 0 0 3px;
+    background: lightgrey;
+    padding: 20px;
+    margin: 8% auto;
+    text-align: center;
+    
+}
+
+.sign-in-form h1
+{
+    font-style: oblique;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.sign-in-form select
+{
+    background: lightgrey;
+}
+
+.sign-in-form input
+{ 
+    background-color: lightgrey;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.sign-in-form button a
+{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+img
+{
+    width: 70px;
+}

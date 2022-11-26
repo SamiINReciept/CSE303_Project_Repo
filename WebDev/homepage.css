@@ -21,6 +21,7 @@
     padding: 35px 0;
     display: flex;
     align-items: center;
+    transition: 0.5s;
 }
 
 .others ul li
@@ -57,4 +58,8 @@
 {
     font-style: oblique;
     margin-bottom: 30px;
+}
+
+ul li:hover a{
+    font-size: large;
 }

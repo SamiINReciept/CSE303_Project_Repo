@@ -6,14 +6,15 @@
     text-decoration: none;
 }
 
-.banner
-{
-    width: 100%;
-    height: 100vh;
-    background-image:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url(images/background-home-6jpg.jpg);
-    background-size: cover;
-    background-position: center;
-}
+/* .banner */
+/* { */
+    /* width: 100%; */
+    /* height: 100vh; */
+    /* background-image:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url(images/background-home-6jpg.jpg); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-color: #914c8e; */
+/* } */
 .others
 {
     width: 85%;
@@ -31,7 +32,8 @@
 }
 .logo
 {
-    width: 120px;
+    width: 150px;
+    padding-right: 20px;
 }
 
 .others ul li a
@@ -44,3 +46,7 @@
 ul li:hover a{
     font-size: large;
 }
+#grad1 {
+    background: linear-gradient(#64e2e6, #496dcf);
+    height: 100vh;
+  }

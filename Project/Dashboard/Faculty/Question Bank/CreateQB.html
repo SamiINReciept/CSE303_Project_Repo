@@ -128,9 +128,9 @@
             <h4>Question</h4>
         </div>
 
-        <div class="d-grid gap-2 pt-1 pb-2 mb-1">
-            <button onclick="insert_row(Q_table)" class="w-100 btn btn-lg btn-primary" type="button">Add Question</button>
-            <button onclick="del_row(Q_table)" class="w-100 btn btn-lg btn-primary" type="button">Delete Question</button>
+        <div style="width: 100%" class="d-grid gap-2 pt-1 pb-2 mb-1">
+            <button onclick="insert_row(Q_table)" class="btn btn-primary" type="button">Add Question</button>
+            <button onclick="del_row(Q_table)" class="btn btn-danger" type="button">Delete Question</button>
         </div>
 
         <div>
@@ -151,27 +151,82 @@
                         <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
 
                     </tr>
+
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">4</th>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">5</th>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">6</th>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">7</th>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">8</th>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">9</th>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">10</th>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+
+                    </tr>
                 </tbody>
             </table>
         </div>
     </main>
-
-    <script>
-        function insert_row() {
-            var table = document.getElementById("Q_table");
-            var row = table.insertRow(0);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell2 = row.insertCell(2);
-            cell1.innerHTML = "NEW CELL1";
-            cell2.innerHTML = "NEW CELL2";
-            cell2.innerHTML = "NEW CELL2";
-        }
-
-        function del_row() {
-            document.getElementById("myTable").deleteRow(0);
-        }
-    </script>
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js">
     </script>

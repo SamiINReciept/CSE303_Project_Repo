@@ -104,8 +104,6 @@
             <h1>Create Question</h1>
         </div>
 
-
-
         <div class="bg-light shadow-sm mx-auto px-3" style="width: 90%; height: auto; border-radius: 15px 15px 15px 15px;">
 
             <div class="dropdown">
@@ -132,9 +130,9 @@
                 <h4>Question</h4>
             </div>
 
-            <div style="width: 100%" class="d-grid gap-2 pt-1 pb-2 mb-1">
-                <button onclick="insert_row(Q_table)" class="btn btn-primary" type="button">Add Question</button>
-                <button onclick="del_row(Q_table)" class="btn btn-danger" type="button">Delete Question</button>
+            <div style="width: 100%" class="d-flex flex-md-nowrap align-items-center pt-2 mb-3 border-bottom">
+                <button style="width: 50%" onclick="insert_row(Q_table)" class="btn btn-primary mx-2" type="button">Add Question</button>
+                <button style="width: 50%" onclick="del_row(Q_table)" class="btn btn-danger mx-2" type="button">Delete Question</button>
             </div>
 
             <table id="Q_table" style="width: 100%" class="table table-striped">

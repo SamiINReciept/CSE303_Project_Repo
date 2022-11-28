@@ -129,12 +129,13 @@
         </div>
 
         <div class="d-grid gap-2 pt-1 pb-2 mb-1">
-            <button class="w-100 btn btn-lg btn-primary" type="button">Create Assessment Question</button>
+            <buttonv onclick="add_form()" class="w-100 btn btn-lg btn-primary" type="button">Add Question</button>
         </div>
 
         <div class="row g-3">
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Question" aria-label="Question">
+                <textarea class="form-control" placeholder="Add question here" id="add_question"
+                    style="height: 100px"></textarea>
             </div>
             <div class="col-sm">
                 <input type="text" class="form-control" placeholder="CO" aria-label="CO">

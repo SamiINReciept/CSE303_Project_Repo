@@ -100,21 +100,34 @@
     </div>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div
-            class="d-flex flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <div class="d-flex flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1>Create Question</h1>
         </div>
 
-        <div class="d-grid gap-2">
-            <button class="w-100 btn btn-lg btn-primary" type="button">Create Assessment Question</button>
-            <button class="w-100 btn btn-lg btn-primary" type="button">View Assessment Question</button>
+        <div class="dropdown">
+            <div class="d-flex flex-md-nowrap align-items-center pt-3 pb-1 mb-1">
+                <h4>Semester</h4>
+            </div>
+            <select class="form-select" aria-label="Default select example">
+                <option value="1">Spring</option>
+                <option value="2">Summer</option>
+                <option value="3">Autumn</option>
+            </select>
+
+            <div class="d-flex flex-md-nowrap align-items-center pt-4 pb-1 mb-1">
+                <h4>Assessment Type</h4>
+            </div>
+            <select class="form-select" aria-label="Default select example">
+                <option value="1">Quiz</option>
+                <option value="2">Mid-Term</option>
+                <option value="3">Final-Term</option>
+            </select>
         </div>
     </main>
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="dashboard.js"></script>
-
 </body>
 
 </html>

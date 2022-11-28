@@ -22,6 +22,7 @@
     display: flex;
     align-items: center;
     transition: 0.5s;
+
 }
 
 .others ul li
@@ -61,5 +62,7 @@
 }
 
 ul li:hover a{
-    font-size: large;
+    font-weight: bold;
+    
 }
+

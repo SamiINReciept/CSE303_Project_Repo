@@ -13,6 +13,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
+
+    <script>
+        function auto_grow(element) {
+            element.style.height = "5px";
+            element.style.height = (element.scrollHeight) + "px";
+        }
+    </script>
+
 </head>
 
 <style>
@@ -107,8 +115,9 @@
 
 
         <!-- <P>pura format boshbe ekhane hehe</P> -->
-        <div class="bg-light shadow-sm mx-auto px-3"
+        <div class="bg-light shadow-sm mx-auto py-3 px-3"
             style="width: 90%; height: auto; border-radius: 15px 15px 15px 15px;">
+
             <table class="table table-bordered">
                 <thead>
                     <tr style="width: 100%">
@@ -127,81 +136,115 @@
                         <td class="text-center fs-6">Computer Science and Engineering (CSE) Program (Undergraduate)</td>
                     </tr>
 
-                    
+
                 </tbody>
-
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr style="width: 100%">
-                            <th class="text-center fs-5" scope="col-1">Course Outline</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tr style="width: 100%">
-                            <th class="text-start" style="width: 10%" class="text-center fs-6" scope="col-1">Course Code
-                            </th>
-                            <th class="text-start" style="width: 40%" class="text-center fs-6" scope="col-2">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" aria-label="Sizing example input"
-                                        aria-describedby="inputGroup-sizing-default">
-                                </div>
-                            </th>
-                            <th class="text-start" style="width: 10%" class="text-center fs-6" scope="col-3">Course
-                                Title</th>
-                            <th class="text-start" style="width: 40%" class="text-center fs-6" scope="col-4">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" aria-label="Sizing example input"
-                                        aria-describedby="inputGroup-sizing-default">
-                                </div>
-                            </th>
-                        </tr>
-
-                        <tr class="text-start" style="width: 100%">
-                            <th class="text-start" style="width: 10%" class="text-center fs-6" scope="col-1">Course Type
-                            </th>
-                            <th class="text-start" style="width: 40%" class="text-center fs-6" scope="col-2">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" aria-label="Sizing example input"
-                                        aria-describedby="inputGroup-sizing-default">
-                                </div>
-                            </th>
-                            <th class="text-start" style="width: 10%" class="text-center fs-6" scope="col-3">
-                                Prerequisite (If any)</th>
-                            <th class="text-start" style="width: 40%" class="text-center fs-6" scope="col-4">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" aria-label="Sizing example input"
-                                        aria-describedby="inputGroup-sizing-default">
-                                </div>
-                            </th>
-                        </tr>
-
-                        <tr class="text-start" style="width: 100%">
-                            <th class="text-start" style="width: 10%" class="text-center fs-6" scope="col-1">Credit
-                                Value</th>
-                            <th class="text-start" style="width: 40%" class="text-center fs-6" scope="col-2">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" aria-label="Sizing example input"
-                                        aria-describedby="inputGroup-sizing-default">
-                                </div>
-                            </th>
-                            <th class="text-start" style="width: 10%" class="text-center fs-6" scope="col-3">Contact
-                                Hours/Week</th>
-                            <th class="text-start" style="width: 40%" class="text-center fs-6" scope="col-4">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" aria-label="Sizing example input"
-                                        aria-describedby="inputGroup-sizing-default">
-                                </div>
-                            </th>
-                        </tr>
-                    </tbody>
-                </table>
-
-
-
-
-
             </table>
+
+            <table class="table table-bordered">
+                <tbody>
+                    <tr style="width: 100%">
+                        <th class="text-start fs-5" scope="col-1">Course Outline</th>
+                    </tr>
+                    <tr style="width: 100%">
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-1">Course Code
+                        </th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-3">Course
+                            Title</th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr class="text-start" style="width: 100%">
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-1">Course Type
+                        </th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-3">
+                            Prerequisite (If any)</th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr class="text-start" style="width: 100%">
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-1">Credit
+                            Value</th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-3">Contact
+                            Hours/Week</th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-bordered">
+                <thead></thead>
+                <tbody>
+                    <tr style="width: 100%">
+                        <th class="text-start fs-5" scope="col-1">Course Description</th>
+                    </tr>
+
+                    <tr style="width: 100%">
+                        <th>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(course_description)" class="form-control"
+                                    id="course_description" style="height: auto"></textarea>
+                            </div>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-bordered">
+                <thead></thead>
+                <tbody>
+                    <tr style="width: 100%">
+                        <th class="text-start fs-5" scope="col-1">Course Objective</th>
+                    </tr>
+
+                    <tr style="width: 100%">
+                        <th>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(course_objective)" class="form-control"
+                                    id="course_objective" style="height: auto"></textarea>
+                            </div>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+
+
 
 
         </div>

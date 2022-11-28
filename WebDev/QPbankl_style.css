@@ -47,6 +47,6 @@ ul li:hover a{
     font-size: large;
 }
 #grad1 {
-    background: linear-gradient(#64e2e6, #496dcf);
+    background: linear-gradient(#496dcf,#64e2e6);
     height: 100vh;
   }

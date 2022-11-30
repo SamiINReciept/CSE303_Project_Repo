@@ -91,27 +91,21 @@
                 <label for="floatingPassword">Password</label>
             </div>
 
+            <select class="form-select" aria-label="Default select example">
+                <option value="1">Faculty</option>
+                <option value="2">Student</option>
+                <!-- <option value="3">Autumn</option> -->
+            </select>
+            &nbsp;
+
             <div class="checkbox mb-3">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-
             <div>
-                <button class="btn btn-secondary dropdown-toggle" class="p-2 bg-light border" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Rank
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Faculty</a></li>
-                    <li><a class="dropdown-item" href="#">Student</a></li>
-                </ul>
-            </div>
-
-            &nbsp;
-
-            <div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                <button onclick="window.location.href='/faculty/dashboard';"
+                    class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
                 <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
             </div>
 

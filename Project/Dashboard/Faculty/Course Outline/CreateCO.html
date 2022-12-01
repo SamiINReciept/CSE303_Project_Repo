@@ -97,7 +97,7 @@
         <div class="position-sticky pt-3 sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../faculty_dashboard.html">
+                    <a class="nav-link" href="../faculty_dashboard.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="feather feather-home align-text-bottom" aria-hidden="true">
@@ -108,7 +108,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../faculty_CO.html">
+                    <a class="nav-link active" href="../faculty_CO.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="feather feather-file align-text-bottom" aria-hidden="true">
@@ -122,7 +122,7 @@
         </div>
     </nav>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pb-3">
         <div class="d-flex flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1>Create Course Outline</h1>
         </div>
@@ -146,7 +146,12 @@
                 <tbody>
                     <tr>
                         <td></td>
-                        <td class="text-center fs-6">Computer Science and Engineering (CSE) Program (Undergraduate)</td>
+                        <td class="text-center fs-6">
+                            <div class="input-group" style="width: 60%;">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -160,7 +165,7 @@
 
                 <tbody>
                     <tr style="width: 100%">
-                        <td class="text-start" style="width: 20%" class="text-center fs-6">Course Code</td>
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Code</th>
 
                         <td class="text-start" style="width: 30%" class="text-center fs-6">
                             <div class="input-group">
@@ -169,28 +174,7 @@
                             </div>
                         </td>
 
-                        <td class="text-start" style="width: 20%" class="text-center fs-6">Course Title</td>
-
-                        <td class="text-start" style="width: 30%" class="text-center fs-6">
-                            <div class="input-group">
-                                <input type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="text-start" style="width: 100%">
-                        <td class="text-start" style="width: 20%" class="text-center fs-6">Course Type</td>
-
-                        <td class="text-start" style="width: 30%" class="text-center fs-6">
-                            <div class="input-group">
-                                <input type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </td>
-
-                        <td class="text-start" style="width: 20%" class="text-center fs-6">Course Prerequisite (If any)
-                        </td>
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Title</th>
 
                         <td class="text-start" style="width: 30%" class="text-center fs-6">
                             <div class="input-group">
@@ -201,7 +185,7 @@
                     </tr>
 
                     <tr class="text-start" style="width: 100%">
-                        <td class="text-start" style="width: 20%" class="text-center fs-6">Credit Value</td>
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Type</th>
 
                         <td class="text-start" style="width: 30%" class="text-center fs-6">
                             <div class="input-group">
@@ -210,7 +194,28 @@
                             </div>
                         </td>
 
-                        <td class="text-start" style="width: 20%" class="text-center fs-6">Contact Hours/Week</td>
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Prerequisite (If any)
+                        </th>
+
+                        <td class="text-start" style="width: 30%" class="text-center fs-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="text-start" style="width: 100%">
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Credit Value</th>
+
+                        <td class="text-start" style="width: 30%" class="text-center fs-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </td>
+
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Contact Hours/Week</th>
 
                         <td class="text-start" style="width: 30%" class="text-center fs-6">
                             <div class="input-group">
@@ -453,10 +458,269 @@
                 </tbody>
             </table>
 
-            <p>CLO Matrix</p>
+            <table class="table table-bordered">
+                <thead>
+                    <th colspan="7" class="text-start fs-5">Course Learning Outcome (CLO) Matrix
+                    </th>
+                    <tr style="width: 100%">
+                        <th rowspan="2" class="text-start" style="width: 5%">CLOs</th>
+                        <th rowspan="2" class="text-start" style="width: 50%">CLO Description</th>
+                        <th colspan="3" class="text-center" style="width: 20%">Bloom's Learning Level</th>
+                        <th rowspan="2" class="text-start" style="width: 20%">PLO Assessed</th>
+                        <th rowspan="2" class="text-center" style="width: 5%">CLO-PLO Correlation</th>
+                    </tr>
+                    <tr>
+                        <th class="text-start">C</th>
+                        <th class="text-start">P</th>
+                        <th class="text-start">A</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">1
+                        </th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(CLO1)" class="form-control" id="CLO1"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+   
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">---</option>
+    
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="0">---</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">2
+                        </th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(CLO2)" class="form-control" id="CLO2"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+   
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">---</option>
+    
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="0">---</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">3
+                        </th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(CLO3)" class="form-control" id="CLO3"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+   
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">---</option>
+    
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="0">---</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">4
+                        </th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(CLO4)" class="form-control" id="CLO4"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+   
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">---</option>
+    
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="0">---</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">5
+                        </th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(CLO5)" class="form-control" id="CLO5"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+   
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">---</option>
+    
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="0">---</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td colspan="7">  </td>
+                        <!-- Selected PLO descriptions should go here -->
+                    </tr>
+                </tbody>
+            </table>
+
 
             <table class="table table-bordered">
-
                 <thead>
                     <th colspan="5" class="text-start fs-5">Lesson Planning with Mapping of CLO,
                         Teaching &
@@ -783,12 +1047,11 @@
             <table class="table table-bordered">
 
                 <thead>
-                    <th colspan="5" class="text-start fs-5">Evaluation Strategy
-                    </th>
+                    <th colspan="5" class="text-start fs-5">Evaluation Strategy</th>
                     <tr style="width: 100%">
-                        <th class="text-start" style="width: 10%">Assessment Type
+                        <th class="text-start" style="width: 15%">Assessment Type
                         </th>
-                        <th class="text-start" style="width: 50%">Assessment Tools
+                        <th class="text-start" style="width: 45%">Assessment Tools
                         </th>
                         <th class="text-start" style="width: 10%">Marks Distribution
                         </th>
@@ -801,17 +1064,35 @@
 
                 <tbody>
                     <tr>
-                        <td rowspan="6">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                        <td rowspan="6" style="vertical-align: middle">
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(assessment_type)" class="form-control"
+                                    id="assessment_type"></textarea>
                             </div>
                         </td>
-
                         <td>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" aria-describedby="basic-addon1">
                             </div>
                         </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td rowspan="6" style="vertical-align: bottom;">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
                         <td>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" aria-describedby="basic-addon1">
@@ -828,6 +1109,81 @@
                             </div>
                         </td>
                     </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+
                 </tbody>
             </table>
 
@@ -912,7 +1268,7 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="d-flex flex-md-nowrap align-items-center pt-2 pb-3 mb-3 border-bottom">
+            <div class="d-flex flex-md-nowrap align-items-center pt-2 pb-3 border-bottom">
                 <button type="button" class="btn btn-primary mx-1">Download Course Outline</button>
                 <button type="button" class="btn btn-secondary mx-1">Store in Database</button>
             </div>

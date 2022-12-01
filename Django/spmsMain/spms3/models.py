@@ -166,21 +166,71 @@ class EVALUATION(models.Model):
     StudentID = models.ForeignKey(STUDENT_T, on_delete=models.CASCADE)
     StudentID = models.CharField(primary_key=True)
     
-    StudentID = models.CharField(primary_key=True)
+    QuestionID = models.CharField(primary_key=True)
     QuestionID = models.ForeignKey(QUESTION_T, on_delete=models.CASCADE)
     
     ObtainedMarks = models.CharField(max_length=50)
 
    
     def __str__(self):
-        return self.Evaluation
+        return self. StudentID +" "+ self.QuestionID +" "+ self.ObtainedMarks
+    
 
 
-class COURSE_T(models.Model):
+class COURSE_PREREQUISITE_T(models.Model):
+    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     CourseID = models.CharField(max_length=10, primary_key=True)
-    CourseName = models.CharField(max_length=50, null=True)
-    ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
+    
+    PrerequisiteID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
+    PrerequisiteID = models.CharField(max_length=10, primary_key=True)
 
     def __str__(self):
-        return self.CourseID
+        return self.PrerequisiteID
     
+    
+    
+
+class COURSE_OUTLINE_T(models.Model):
+    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
+    CourseID = models.CharField(max_length=10, primary_key=True)
+    
+    CourseTitle = models.CharField(max_length=50)
+    CourseType = models.CharField(max_length=50)
+    CreditValue = models.CharField(max_length=50)
+    ContactHourOrWeek = models.CharField(max_length=50)
+    CourseDescription = models.CharField(max_length=50)
+    CourseObjective = models.CharField(max_length=50)
+    CourseContent = models.CharField(max_length=50)
+    AssessmentType = models.CharField(max_length=50)
+    ReferenceBook = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.CourseID + " " + self.CourseTitle
+
+
+
+class COURSE_LESSON_T(models.Model):
+    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
+    CourseID = models.CharField(max_length=10, primary_key=True)
+    
+    Week = models.CharField(max_length=10, primary_key=True)
+    Topic = models.CharField(max_length=50)
+    TeachingStrategy = models.CharField(max_length=50)
+    AssessmentStrategy = models.CharField(max_length=50)
+    CLOLevel = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.CourseID + " " + self.Week
+
+
+class COURSE_EVALUATION_T(models.Model):
+    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
+    CourseID = models.CharField(max_length=10, primary_key=True)
+    
+    AssessmentTools = models.CharField(max_length=10, primary_key=True)
+    MarksDist = models.CharField(max_length=50)
+    BloomCategory = models.CharField(max_length=50)
+
+
+    def __str__(self):
+        return self.CourseID + " " + self.AssessmentTools   

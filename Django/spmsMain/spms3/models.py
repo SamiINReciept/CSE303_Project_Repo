@@ -184,8 +184,6 @@ class EVALUATION(models.Model):
 
 class COURSE_PREREQUISITE_T(models.Model):
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
-    CourseID = models.CharField(max_length=10, primary_key=True)
-    
     PrerequisiteID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     PrerequisiteID = models.CharField(max_length=10, primary_key=True)
 
@@ -216,8 +214,6 @@ class COURSE_OUTLINE_T(models.Model):
 
 class COURSE_LESSON_T(models.Model):
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
-    CourseID = models.CharField(max_length=10, primary_key=True)
-    
     Week = models.CharField(max_length=10, primary_key=True)
     Topic = models.CharField(max_length=50)
     TeachingStrategy = models.CharField(max_length=50)
@@ -230,8 +226,6 @@ class COURSE_LESSON_T(models.Model):
 
 class COURSE_EVALUATION_T(models.Model):
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
-    CourseID = models.CharField(max_length=10, primary_key=True)
-    
     AssessmentTools = models.CharField(max_length=10, primary_key=True)
     MarksDist = models.CharField(max_length=50)
     BloomCategory = models.CharField(max_length=50)

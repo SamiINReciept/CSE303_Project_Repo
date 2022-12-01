@@ -54,7 +54,7 @@ class DEPARTMENT_HEAD_T(EMPLOYEE_T):
    
 
 class PROGRAM_T(models.Model):
-    ProgramID = models.AutoField(primary_key=True)
+    ProgramID = models.CharField(max_length=7, primary_key=True)
     DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
     ProgramName = models.CharField(max_length=50)
     
@@ -137,7 +137,6 @@ class SECTION_T(models.Model):
 
     def __str__(self):
         return self.SectionID
-
 
 
 

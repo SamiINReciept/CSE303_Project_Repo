@@ -100,7 +100,7 @@ class COCOURSE_T(models.Model):
     
 
 class PLO_T(models.Model):
-    PlOID = models.AutoField(primary_key=True)
+    PlOID = models.CharField(primary_key=True)
     ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
     PLONum = models.CharField(max_length=50)
     Details = models.CharField(max_length=200)
@@ -112,7 +112,7 @@ class PLO_T(models.Model):
 
 
 class CLO_T(models.Model):
-    ClOID = models.AutoField(primary_key=True)
+    ClOID = models.CharField(max_length=50, primary_key=True)
     PLOID = models.ForeignKey(PLO_T, on_delete=models.CASCADE)
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     CLONum = models.CharField(max_length=50)
@@ -142,7 +142,7 @@ class SECTION_T(models.Model):
 
 
 class ASSESSMENT_T(models.Model):
-    AssessmentID = models.CharField(primary_key=True)
+    AssessmentID = models.CharField(max_length=50, primary_key=True)
     SectionID = models.ForeignKey(SECTION_T, on_delete=models.CASCADE)
     AssessmentName = models.CharField(max_length=50)
     TotalMarks = models.IntegerField(max_length=10)
@@ -153,12 +153,12 @@ class ASSESSMENT_T(models.Model):
 
 
 class QUESTION_T(models.Model):
-    QuestionID = models.CharField(primary_key=True)
+    QuestionID = models.CharField(max_length=50, primary_key=True)
     AssessmentID = models.ForeignKey(ASSESSMENT_T, on_delete=models.CASCADE)
     CLOID = models.ForeignKey(CLO_T, on_delete=models.CASCADE)
     QuestionNum = models.CharField(max_length=200)
     Details = models.CharField(max_length=200)
-    Marks = models.IntegerField(max_length=200)
+    Marks = models.IntegerField(null=True)
     
    
     def __str__(self):

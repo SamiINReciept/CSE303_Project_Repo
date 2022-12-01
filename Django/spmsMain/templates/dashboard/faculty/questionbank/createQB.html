@@ -14,6 +14,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
+
+        <script>
+            function auto_grow(element) {
+                element.style.height = "5px";
+                element.style.height = (element.scrollHeight) + "px";
+            }
+        </script>
+    
 </head>
 
 <style>
@@ -101,145 +109,173 @@
     </div>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
         <div class="d-flex flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1>Create Question</h1>
         </div>
 
-        <div class="bg-light shadow-sm mx-auto px-3" style="width: 90%; height: auto; border-radius: 15px 15px 15px 15px;">
+        <div class="bg-light shadow-sm mx-auto px-3 py-3"
+            style="width: 90%; height: auto; border-radius: 15px 15px 15px 15px;">
 
-            <div class="dropdown">
-                <div class="d-flex flex-md-nowrap align-items-center pt-3 pb-1 mb-1">
-                    <h4>Semester</h4>
-                </div>
-
-                <select class="form-select" aria-label="Default select example">
-                    <option value="1">Spring</option>
-                    <option value="2">Summer</option>
-                    <option value="3">Autumn</option>
-                </select>
-
-                <div class="d-flex flex-md-nowrap align-items-center pt-4 pb-1 mb-1">
-                    <h4>Assessment Type</h4>
-                </div>
-                
-                <select class="form-select" aria-label="Default select example">
-                    <option value="1">Quiz</option>
-                    <option value="2">Mid-Term</option>
-                    <option value="3">Final-Term</option>
-                </select>
-            </div>
-
-            <div class="d-flex flex-md-nowrap align-items-center pt-4 pb-1 mb-1">
-                <h4>Question</h4>
-            </div>
-
-            <div style="width: 100%" class="d-flex flex-md-nowrap align-items-center pt-2 mb-3 border-bottom">
-                <button style="width: 50%" onclick="insert_row(Q_table)" class="btn btn-primary mx-2" type="button">Add Question</button>
-                <button style="width: 50%" onclick="del_row(Q_table)" class="btn btn-danger mx-2" type="button">Delete Question</button>
-            </div>
-
-            <table id="Q_table" style="width: 100%" class="table table-striped">
+            <table class="table table-bordered">
                 <thead>
-                    <tr>
-                        <th style="width: 2%" scope="col">#</th>
-                        <th style="width: 88%" scope="col">Question details</th>
-                        <th style="width: 5%" scope="col">CLO</th>
-                        <th style="width: 5%" scope="col">Marks</th>
+                    <tr style="width: 100% text">
+                        <th scope="col" style="width: 7%"> <img src="{% static 'images/IUB-logo.png' %}" alt="IUB LOGO"
+                                height=100% width=100%></img> </th>
+                        <th scope="col" style="width: 93%" class="text-center fs-4">
+                            INDEPENDENT UNIVERSITY, BANGLADESH (IUB)
+                        </th>
                     </tr>
                 </thead>
+            </table>
+
+            <table class="table">
+                <tbody>
+                    <tr style="width: 100%">
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-1">Course Code
+                        </th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-3">Section</th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr class="text-start" style="width: 100%">
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-1">Semester
+                        </th>
+                        <th>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected disabled="true">----</option>
+                                {%for result in spmsMain%}
+                                <option>{{result.semester_name}}</option>
+                                {% endfor %}
+                                
+                            </select>
+
+                        </th>
+
+
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-3">Year</th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr class="text-start" style="width: 100%">
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-1">Assessment Name
+                        </th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-3">Total marks
+                        </th>
+                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table id="Q_table" style="width: 100%" class="table table-striped">
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <th class="text-center" style="width: 5%" scope="col">Question no.</th>
+                        <th style="width: 85%" scope="col">Question details</th>
+                        <th class="text-center" style="width: 5%" scope="col">CLO Assessed</th>
+                        <th style="width: 5%" scope="col">Marks</th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;" scope="row">1</th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(Q1)" class="form-control" id="Q1"
+                                    style="height: auto"></textarea>
+                            </div>
+                        </td>
+                        <td><select class="form-select" aria-label="Default select example"></select></td>
                         <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
 
                     </tr>
 
                     <tr>
-                        <th scope="row">2</th>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-
-                    </tr>
-
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <th style="text-align: center;" scope="row">2</th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(Q2)" class="form-control" id="Q2"
+                                    style="height: auto"></textarea>
+                            </div>
+                        </td>
+                        <td><select class="form-select" aria-label="Default select example"></select></td>
                         <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
 
                     </tr>
 
                     <tr>
-                        <th scope="row">4</th>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-
-                    </tr>
-
-                    <tr>
-                        <th scope="row">5</th>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <th style="text-align: center;" scope="row">3</th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(Q3)" class="form-control" id="Q3"
+                                    style="height: auto"></textarea>
+                            </div>
+                        </td>
+                        <td><select class="form-select" aria-label="Default select example"></select></td>
                         <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
 
                     </tr>
 
                     <tr>
-                        <th scope="row">6</th>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-
-                    </tr>
-
-                    <tr>
-                        <th scope="row">7</th>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <th style="text-align: center;" scope="row">4</th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(Q4)" class="form-control" id="Q4"
+                                    style="height: auto"></textarea>
+                            </div>
+                        </td>
+                        <td><select class="form-select" aria-label="Default select example"></select></td>
                         <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
 
                     </tr>
 
                     <tr>
-                        <th scope="row">8</th>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-
-                    </tr>
-
-                    <tr>
-                        <th scope="row">9</th>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-
-                    </tr>
-
-                    <tr>
-                        <th scope="row">10</th>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
-                        <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
+                        <th style="text-align: center;" scope="row">5</th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(Q5)" class="form-control" id="Q5"
+                                    style="height: auto"></textarea>
+                            </div>
+                        </td>
+                        <td><select class="form-select" aria-label="Default select example"></select></td>
                         <td><input type="text" class="form-control" aria-describedby="basic-addon1"></td>
 
                     </tr>
                 </tbody>
             </table>
             <div class="d-flex flex-md-nowrap align-items-center pt-2 pb-3 mb-3 border-bottom">
-                <button type="button" class="btn btn-success mx-1">View Assessment Paper</button>
+                <a href="/viewassessment"><button type="button" class="btn btn-success mx-1">View Assessment
+                        Paper</button></a>
                 <button type="button" class="btn btn-primary mx-1">Download Assessment Paper</button>
                 <button type="button" class="btn btn-secondary mx-1">Store in Database</button>
             </div>
         </div>
     </main>
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js">
-    </script>
-    <script src="{% static 'js/dashboard.js' %}"></script>
 </body>
 
 </html>

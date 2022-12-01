@@ -82,35 +82,51 @@
 
 <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+
         <a class="navbar-brand col-sm-3 col-lg-2 me-0 px-3 fs-6">Independent University, Bangladesh</a>
 
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
                 <a class="nav-link px-3" href="#">Sign out</a>
             </div>
         </div>
+
     </header>
 
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky pt-3 sidebar-sticky">
-                    <ul class="nav flex-column">
-                    </ul>
-                </div>
-            </nav>
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3 sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="../faculty_dashboard.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-home align-text-bottom" aria-hidden="true">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../faculty_CO.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-file align-text-bottom" aria-hidden="true">
+                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                            <polyline points="13 2 13 9 20 9"></polyline>
+                        </svg>
+                        Course Outline
+                    </a>
+                </li>
+            </ul>
         </div>
-    </div>
+    </nav>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pb-3">
         <div class="d-flex flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1>Create Course Outline</h1>
         </div>
+
         <!-- <P>pura format boshbe ekhane hehe</P> -->
         <div class="bg-light shadow-sm mx-auto py-3 px-3"
             style="width: 90%; height: auto; border-radius: 15px 15px 15px 15px;">
@@ -118,155 +134,154 @@
             <table class="table table-bordered">
                 <thead>
                     <tr style="width: 100%">
-                        <th scope="col" style="width: 10%"> <img src="IUB LOGO.png" alt="IUB LOGO" height=100%
-                                width=100%></img> </th>
-                        <th scope="col" style="width: 90%" class="text-center fs-4">
-                            Department of Computer Science & Engineering (CSE)<br>
-                            School of Engineering, Technology & Sciences<br>
-                            INDEPENDENT UNIVERSITY, BANGLADESH (IUB)
+                        <th scope="col" style="width: 20%"> <img src="IUB LOGO.png" alt="IUB LOGO" height=100%
+                                width=100%></img></th>
+                        <th>
+                            <div class="form-floating">
+                                <center>
+                                    <div class="input-group" style="width: 70%; font-weight: bold;">
+                                        <input style="font-weight: bold; font-size: x-large; text-align: center;"
+                                            type="text" class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                                    &nbsp;
+                                    <div class="input-group" style="width: 70%; font-weight: bold;">
+                                        <input style="font-weight: bold; font-size: x-large; text-align: center;"
+                                            type="text" class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                                </center>
+                                <p class="text-center fs-4 pt-3">INDEPENDENT UNIVERSITY, BANGLADESH (IUB)</p>
+                            </div>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td class="text-center fs-6">Computer Science and Engineering (CSE) Program (Undergraduate)</td>
-                    </tr>
-
-
-                </tbody>
             </table>
 
             <table class="table table-bordered">
-                <tbody>
-                    <tr style="width: 100%">
+                <thead>
+                    <tr>
                         <th colspan="4" class="text-start fs-5" scope="col-1">Course Outline</th>
                     </tr>
+                </thead>
+
+                <tbody>
                     <tr style="width: 100%">
-                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-1">Course Code
-                        </th>
-                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-2">
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Code</th>
+
+                        <td class="text-start" style="width: 30%" class="text-center fs-6">
                             <div class="input-group">
                                 <input type="text" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
-                        </th>
-                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-3">Course
-                            Title</th>
-                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-4">
+                        </td>
+
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Title</th>
+
+                        <td class="text-start" style="width: 30%" class="text-center fs-6">
                             <div class="input-group">
                                 <input type="text" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
-                        </th>
+                        </td>
                     </tr>
 
                     <tr class="text-start" style="width: 100%">
-                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-1">Course Type
-                        </th>
-                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-2">
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Type</th>
+
+                        <td class="text-start" style="width: 30%" class="text-center fs-6">
                             <div class="input-group">
                                 <input type="text" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
+                        </td>
+
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Prerequisite (If any)
                         </th>
-                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-3">
-                            Course Section</th>
-                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-4">
+
+                        <td class="text-start" style="width: 30%" class="text-center fs-6">
                             <div class="input-group">
                                 <input type="text" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
-                        </th>
+                        </td>
                     </tr>
 
                     <tr class="text-start" style="width: 100%">
-                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-1">Credit
-                            Value</th>
-                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-2">
-                            <div class="input-group">
-                                <input type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </th>
-                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-3">Contact
-                            Hours/Week</th>
-                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-4">
-                            <div class="input-group">
-                                <input type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </th>
-                    </tr>
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Credit Value</th>
 
-                    <tr class="text-start" style="width: 100%">
-                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-1">Semester</th>
-                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-2">
+                        <td class="text-start" style="width: 30%" class="text-center fs-6">
                             <div class="input-group">
                                 <input type="text" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
-                        </th>
-                        <th class="text-start" style="width: 20%" class="text-center fs-6" scope="col-3">Prerequisites (If any)</th>
-                        <th class="text-start" style="width: 30%" class="text-center fs-6" scope="col-4">
+                        </td>
+
+                        <th class="text-start" style="width: 20%" class="text-center fs-6">Contact Hours/Week</th>
+
+                        <td class="text-start" style="width: 30%" class="text-center fs-6">
                             <div class="input-group">
                                 <input type="text" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
-                        </th>
+                        </td>
                     </tr>
                 </tbody>
             </table>
 
             <table class="table table-bordered">
-                <thead></thead>
-                <tbody>
-                    <tr style="width: 100%">
-                        <th class="text-start fs-5" scope="col-1">Course Description</th>
+                <thead>
+                    <tr>
+                        <th class="text-start fs-5">Course Description</th>
                     </tr>
+                </thead>
 
-                    <tr style="width: 100%">
-                        <th>
+                <tbody>
+                    <tr>
+                        <td>
                             <div class="form-floating">
                                 <textarea oninput="auto_grow(course_description)" class="form-control"
                                     id="course_description" style="height: auto"></textarea>
                             </div>
-                        </th>
+                        </td>
                     </tr>
                 </tbody>
             </table>
 
             <table class="table table-bordered">
-                <thead></thead>
-                <tbody>
-                    <tr style="width: 100%">
-                        <th class="text-start fs-5" scope="col-1">Course Objective</th>
+                <thead>
+                    <tr>
+                        <th class="text-start fs-5">Course Objective</th>
                     </tr>
+                </thead>
 
-                    <tr style="width: 100%">
-                        <th>
+                <tbody>
+                    <tr>
+                        <td>
                             <div class="form-floating">
                                 <textarea oninput="auto_grow(course_objective)" class="form-control"
                                     id="course_objective" style="height: auto"></textarea>
                             </div>
-                        </th>
+                        </td>
                     </tr>
                 </tbody>
             </table>
 
             <table class="table table-bordered">
-                <thead></thead>
-                <tbody>
-                    <tr style="width: 100%">
-                        <th class="text-start fs-5" scope="col-1">Course Policy</th>
+                <thead>
+                    <tr>
+                        <th class="text-start fs-5">Course Policy</th>
                     </tr>
+                </thead>
 
-                    <tr style="width: 100%">
+                <tbody>
+                    <tr>
                         <td>
                             <div class="bg-body shadow-sm mx-auto py-3 px-3"
                                 style="border-radius: 10px 10px 10px 10px;">
                                 <p class="text-start fs-6">
-                                    a. It is the student’s responsibility to gather information about the
+                                    <b>a.</b> It is the student’s responsibility to gather information about the
                                     assignments/project and cover topics
                                     during the lectures missed. Regular class attendance is mandatory. Points will be
                                     taken off for missing
@@ -275,30 +290,37 @@
                                     time to get the attendance. In the event of failing 70% of attendance, a student
                                     will receive a W grade
                                     automatically. <br><br>
-                                    b. Same project work is assigned to all sections. Students should work in groups for
+                                    <b>b.</b> Same project work is assigned to all sections. Students should work in
+                                    groups for
                                     the project. They are
                                     required to prepare a final report on the project which will be incrementally
                                     developed through
                                     assignments. <br><br>
-                                    c. The date and syllabus of class tests, Mid-Term and Final-Term will be announced
+                                    <b>c.</b> The date and syllabus of class tests, Mid-Term and Final-Term will be
+                                    announced
                                     in the class. There is NO
                                     provision for make-up. <br><br>
-                                    d. Both the Mid-Term and Final-Term exams will be coordinated exams and will be held
+                                    <b>d.</b> Both the Mid-Term and Final-Term exams will be coordinated exams and will
+                                    be held
                                     on a specific date
                                     for all the sections. <br><br>
-                                    e. The reading materials for each class will be given prior to that class so that
+                                    <b>e.</b> The reading materials for each class will be given prior to that class so
+                                    that
                                     students may have a cursory
                                     look into the materials. <br><br>
-
-                                    f. Class participation is vital for a better understanding of the topics of this
+                                    <b>f.</b>Class participation is vital for a better understanding of the topics of
+                                    this
                                     course. Students are invited to
                                     raise questions. <br><br>
-                                    g. Students should take tutorials with the instructor during office hours. Prior
+                                    <b>g.</b> Students should take tutorials with the instructor during office hours.
+                                    Prior
                                     appointment is required. <br><br>
-                                    h. Students must maintain the IUB code of conduct and ethical guidelines offered by
+                                    <b>h.</b> Students must maintain the IUB code of conduct and ethical guidelines
+                                    offered by
                                     the school of computer
                                     science and engineering. <br><br>
-                                    i. No working mobile phones are allowed in class. Using one for any purpose will
+                                    <b>i.</b> No working mobile phones are allowed in class. Using one for any purpose
+                                    will
                                     result in serious
                                     consequences.
                                 </p>
@@ -309,24 +331,27 @@
             </table>
 
             <table class="table table-bordered">
-                <thead></thead>
-                <tbody>
-                    <tr style="width: 100%">
-                        <th class="text-start fs-5" scope="col-1">Academic Disonesty</th>
+                <thead>
+                    <tr>
+                        <th class="text-start fs-5">Academic Disonesty</th>
                     </tr>
+                </thead>
 
-                    <tr style="width: 100%">
+                <tbody>
+                    <tr>
                         <td>
                             <div class="bg-body shadow-sm mx-auto py-3 px-3"
                                 style="border-radius: 10px 10px 10px 10px;">
                                 <p class="text-start fs-6">
-                                    a. A student who cheats, plagiarizes, or furnishes false, misleading information in
+                                    <b>a.</b> A student who cheats, plagiarizes, or furnishes false, misleading
+                                    information in
                                     the course is subject to
                                     disciplinary action up to and including an F grade in the course and/or
                                     suspension/expulsion from the
                                     University. <br><br>
-                                    b. Students must maintain the code of IUB. <br><br>
-                                    c. The goal of homework is to give you practice in mastering the course material.
+                                    <b>b.</b> Students must maintain the code of IUB. <br><br>
+                                    <b>c.</b> The goal of homework is to give you practice in mastering the course
+                                    material.
                                     Consequently, you are
                                     encouraged to collaborate on problem sets. In fact, students who form study groups
                                     generally do better on
@@ -338,12 +363,13 @@
                                     to solve a problem,
                                     talk to other groups or ask your recitation instructor or teaching assistant
                                     assigned to your class.<br><br>
-                                    d. You must write up each problem solution by yourself without assistance. It is a
+                                    <b>d.</b> You must write up each problem solution by yourself without assistance. It
+                                    is a
                                     violation of this policy to
                                     submit a problem solution that you cannot orally explain to a member of the course
                                     staff.<br><br>
-                                    e. No collaboration whatsoever is permitted during examination.<br><br>
-                                    f. Plagiarism and other anti-intellectual behavior cannot be tolerated in any
+                                    <b>e.</b> No collaboration whatsoever is permitted during examination.<br><br>
+                                    <b>f.</b> Plagiarism and other anti-intellectual behavior cannot be tolerated in any
                                     academic environment that
                                     prides itself on individual accomplishment. If you have any questions about the
                                     collaboration policy, or if
@@ -361,13 +387,14 @@
             </table>
 
             <table class="table table-bordered">
-                <thead></thead>
-                <tbody>
-                    <tr style="width: 100%">
-                        <th class="text-start fs-5" scope="col-1">Academic Disonesty</th>
+                <thead>
+                    <tr>
+                        <th class="text-start fs-5">Academic Disonesty</th>
                     </tr>
+                </thead>
 
-                    <tr style="width: 100%">
+                <tbody>
+                    <tr>
                         <td>
                             <div class="bg-body shadow-sm mx-auto py-3 px-3"
                                 style="border-radius: 10px 10px 10px 10px;">
@@ -389,13 +416,14 @@
             </table>
 
             <table class="table table-bordered">
-                <thead></thead>
-                <tbody>
-                    <tr style="width: 100%">
-                        <th class="text-start fs-5" scope="col-1">Non Discrimination Policy</th>
+                <thead>
+                    <tr>
+                        <th class="text-start fs-5">Non Discrimination Policy</th>
                     </tr>
+                </thead>
 
-                    <tr style="width: 100%">
+                <tbody>
+                    <tr>
                         <td>
                             <div class="bg-body shadow-sm mx-auto py-3 px-3"
                                 style="border-radius: 10px 10px 10px 10px;">
@@ -415,46 +443,309 @@
             </table>
 
             <table class="table table-bordered">
-                <thead></thead>
-                <tbody>
-                    <tr style="width: 100%">
-                        <th class="text-start fs-5" scope="col-1">Course Content</th>
+                <thead>
+                    <tr>
+                        <th class="text-start fs-5">Course Content</th>
                     </tr>
+                </thead>
 
-                    <tr style="width: 100%">
-                        <th>
+                <tbody>
+                    <tr>
+                        <td>
                             <div class="form-floating">
                                 <textarea oninput="auto_grow(course_content)" class="form-control" id="course_content"
                                     style="height: auto"></textarea>
                             </div>
-                        </th>
+                        </td>
                     </tr>
                 </tbody>
             </table>
 
-            <p>CLO Matrix</p>
             <table class="table table-bordered">
-                <tbody>
+                <thead>
+                    <th colspan="7" class="text-start fs-5">Course Learning Outcome (CLO) Matrix
+                    </th>
                     <tr style="width: 100%">
-                        <th colspan="5" class="text-start fs-5" scope="col-1">Lesson Planning with Mapping of CLO,
-                            Teaching &
-                            Assessment Strategies</th>
+                        <th rowspan="2" class="text-start" style="width: 5%">CLOs</th>
+                        <th rowspan="2" class="text-start" style="width: 50%">CLO Description</th>
+                        <th colspan="3" class="text-center" style="width: 20%">Bloom's Learning Level</th>
+                        <th rowspan="2" class="text-start" style="width: 20%">PLO Assessed</th>
+                        <th rowspan="2" class="text-center" style="width: 5%">CLO-PLO Correlation</th>
                     </tr>
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 5%" scope="col-1">Week
+                    <tr>
+                        <th class="text-start">C</th>
+                        <th class="text-start">P</th>
+                        <th class="text-start">A</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">1
                         </th>
-                        <th class="text-start" style="width: 50%" scope="col-2">Topic
-                        </th>
-                        <th class="text-start" style="width: 20%" scope="col-3">Teaching-Learning Strategy
-                        </th>
-                        <th class="text-start" style="width: 20%" scope="col-4">Assessment Strategy
-                        </th>
-                        <th class="text-start" style="width: 5%" scope="col-5">Corresponging CLOs
-                        </th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(CLO1)" class="form-control" id="CLO1"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">---</option>
+
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="0">---</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </td>
                     </tr>
 
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">2
+                        </th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(CLO2)" class="form-control" id="CLO2"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">---</option>
+
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="0">---</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">3
+                        </th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(CLO3)" class="form-control" id="CLO3"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">---</option>
+
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="0">---</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">4
+                        </th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(CLO4)" class="form-control" id="CLO4"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">---</option>
+
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="0">---</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">5
+                        </th>
+                        <td>
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(CLO5)" class="form-control" id="CLO5"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">---</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">---</option>
+
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="0">---</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td colspan="7"> </td>
+                        <!-- Selected PLO descriptions should go here -->
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <table class="table table-bordered">
+                <thead>
+                    <th colspan="5" class="text-start fs-5">Lesson Planning with Mapping of CLO,
+                        Teaching &
+                        Assessment Strategies
+                    </th>
                     <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">1
+                        <th class="text-start" style="width: 5%">Week
+                        </th>
+                        <th class="text-start" style="width: 50%">Topic
+                        </th>
+                        <th class="text-start" style="width: 20%">Teaching-Learning Strategy
+                        </th>
+                        <th class="text-start" style="width: 20%">Assessment Strategy
+                        </th>
+                        <th class="text-start" style="width: 5%">Corresponging CLOs
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">1
                         </th>
                         <td>
                             <div class="form-floating">
@@ -478,8 +769,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">2
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">2
                         </th>
                         <td>
                             <div class="form-floating">
@@ -504,8 +795,9 @@
                     </tr>
 
                     <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">3
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">3
                         </th>
+
                         <td>
                             <div class="form-floating">
                                 <textarea oninput="auto_grow(topic_3)" class="form-control" id="topic_3"></textarea>
@@ -528,8 +820,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">4
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">4
                         </th>
                         <td>
                             <div class="form-floating">
@@ -553,8 +845,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">5
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">5
                         </th>
                         <td>
                             <div class="form-floating">
@@ -578,8 +870,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">6
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">6
                         </th>
                         <td>
                             <div class="form-floating">
@@ -603,8 +895,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">7
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">7
                         </th>
                         <td>
                             <div class="form-floating">
@@ -628,8 +920,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">8
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">8
                         </th>
                         <td>
                             <div class="form-floating">
@@ -653,8 +945,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">9
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">9
                         </th>
                         <td>
                             <div class="form-floating">
@@ -678,8 +970,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">10
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">10
                         </th>
                         <td>
                             <div class="form-floating">
@@ -703,8 +995,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">11
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">11
                         </th>
                         <td>
                             <div class="form-floating">
@@ -728,8 +1020,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" class="text-center fs-5" scope="col-1">12
+                    <tr>
+                        <th class="text-start" style="width: 8.33%" class="text-center fs-5">12
                         </th>
                         <td>
                             <div class="form-floating">
@@ -755,98 +1047,230 @@
                 </tbody>
             </table>
 
-
-            <p>Evaluation</p>
-
-
             <table class="table table-bordered">
-                <tbody>
+
+                <thead>
+                    <th colspan="5" class="text-start fs-5">Evaluation Strategy</th>
                     <tr style="width: 100%">
-                        <th colspan="11" class="text-start fs-5" scope="col-1">Grading</th>
+                        <th class="text-start" style="width: 15%">Assessment Type
+                        </th>
+                        <th class="text-start" style="width: 45%">Assessment Tools
+                        </th>
+                        <th class="text-start" style="width: 10%">Marks Distribution
+                        </th>
+                        <th class="text-start" style="width: 20%">Bloom's Category
+                        </th>
+                        <th class="text-start" style="width: 10%">Sub Total
+                        </th>
                     </tr>
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 8.33%" scope="col-1">A
-                        </th>
-                        <th class="text-start" style="width: 8.33%" scope="col-2">A-
-                        </th>
-                        <th class="text-start" style="width: 8.33%" scope="col-3">B+
-                        </th>
-                        <th class="text-start" style="width: 8.33%" scope="col-4">B
-                        </th>
-                        <th class="text-start" style="width: 8.33%" scope="col-5">B-
-                        </th>
-                        <th class="text-start" style="width: 8.33%" scope="col-6">C+
-                        </th>
-                        <th class="text-start" style="width: 8.33%" scope="col-7">C
-                        </th>
-                        <th class="text-start" style="width: 8.33%" scope="col-8">C-
-                        </th>
-                        <th class="text-start" style="width: 8.33%" scope="col-9">D+
-                        </th>
-                        <th class="text-start" style="width: 8.33%" scope="col-10">D
-                        </th>
-                        <th class="text-start" style="width: 8.33%" scope="col-11">F
-                        </th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td rowspan="6" style="vertical-align: middle">
+                            <div class="form-floating">
+                                <textarea oninput="auto_grow(assessment_type)" class="form-control"
+                                    id="assessment_type"></textarea>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td rowspan="6" style="vertical-align: bottom;">
+                            <div class="text-center">
+                                <p class="text-center fs-5">100%</p>
+                            </div>
+                        </td>
                     </tr>
 
-                    <tr style="width: 100%">
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-1">90-100
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-2">85-89
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-3">80-84
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-4">75-79
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-5">70-74
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-6">65-69
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-7">60-64
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-8">55-59
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-9">50-54
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-10">45-49
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
-                        <td class="text-start" style="width: 8.33%" class="text-center fs-6" scope="col-11">0-44
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                            </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
 
             <table class="table table-bordered">
-                <thead></thead>
+                <thead>
+                    <tr>
+                        <th colspan="11" class="text-start fs-5">Grading</th>
+                    </tr>
+                    <tr style="width: 100%">
+                        <th class="text-start" style="width: 8.33%">A
+                        </th>
+                        <th class="text-start" style="width: 8.33%">A-
+                        </th>
+                        <th class="text-start" style="width: 8.33%">B+
+                        </th>
+                        <th class="text-start" style="width: 8.33%">B
+                        </th>
+                        <th class="text-start" style="width: 8.33%">B-
+                        </th>
+                        <th class="text-start" style="width: 8.33%">C+
+                        </th>
+                        <th class="text-start" style="width: 8.33%">C
+                        </th>
+                        <th class="text-start" style="width: 8.33%">C-
+                        </th>
+                        <th class="text-start" style="width: 8.33%">D+
+                        </th>
+                        <th class="text-start" style="width: 8.33%">D
+                        </th>
+                        <th class="text-start" style="width: 8.33%">F
+                        </th>
+                    </tr>
+                </thead>
+
                 <tbody>
                     <tr style="width: 100%">
-                        <th class="text-start fs-5" scope="col-1">Reference Book & Additional Materials</th>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">90-100
+                        </td>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">85-89
+                        </td>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">80-84
+                        </td>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">75-79
+                        </td>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">70-74
+                        </td>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">65-69
+                        </td>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">60-64
+                        </td>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">55-59
+                        </td>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">50-54
+                        </td>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">45-49
+                        </td>
+                        <td class="text-start" style="width: 8.33%" class="text-center fs-6">0-44
+                        </td>
                     </tr>
+                </tbody>
+            </table>
 
-                    <tr style="width: 100%">
-                        <th>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-start fs-5">Reference Book & Additional Materials</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
                             <div class="form-floating">
                                 <textarea oninput="auto_grow(Resource)" class="form-control" id="Resource"
                                     style="height: auto"></textarea>
                             </div>
-                        </th>
+                        </td>
                     </tr>
                 </tbody>
             </table>
+            <div class="d-flex flex-md-nowrap align-items-center pt-2 pb-3 border-bottom">
+                <button type="button" class="btn btn-primary mx-1">Download Course Outline</button>
+                <button type="button" class="btn btn-secondary mx-1">Store in Database</button>
+            </div>
         </div>
         <!-- <P>pura format boshbe ekhane hehe</P> -->
-
-
-        <div class="d-flex flex-md-nowrap align-items-center pt-2 pb-3 mb-3 border-bottom">
-            <button type="button" class="btn btn-success mx-1">View Course Outline</button>
-            <button type="button" class="btn btn-primary mx-1">Download Course Outline</button>
-            <button type="button" class="btn btn-secondary mx-1">Store in Database</button>
-        </div>
     </main>
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js">
-    </script>
-    <script src="dashboard.js"></script>
 </body>
 
 </html>

@@ -10,6 +10,9 @@ admin.site.register(Department_T)
 admin.site.register(Dean_T)
 admin.site.register(Head_T)
 admin.site.register(Faculty_T)
+admin.site.register(Program_T)
+admin.site.register(Student_T)
+admin.site.register(Course_T)
 
 
 

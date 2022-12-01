@@ -19,6 +19,26 @@ class Department_T(models.Model):
         return self.departmentID
 
 
+class Program_T(models.Model):
+    programID = models.AutoField(primary_key=True)
+    programName = models.CharField(max_length=70)
+    department = models.ForeignKey(Department_T, on_delete=models.CASCADE, default='N/A')
+
+    def __str__(self):
+        return self.programName
+
+class Student_T(models.Model):
+    studentID = models.CharField(max_length=7, primary_key=True)
+    Name = models.CharField(max_length=50, null=True)
+    email = models.CharField(max_length=50, null=True)
+    enrollmentDate = models.DateField(null=True)
+    #program = models.ForeignKey(Program_T, on_delete=models.CASCADE, default='N/A')
+    department = models.ForeignKey(Department_T, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.studentID
+
+
 class Employee_T(models.Model):
     employeeID = models.CharField(max_length=4, primary_key=True)
     employeeName = models.CharField(max_length=30, null=True)
@@ -49,6 +69,15 @@ class Faculty_T(Employee_T):
     def __str__(self):
        return self.firstName + " "+ self.lastName
 
+class Course_T(models.Model):
+    courseID = models.CharField(max_length=7, primary_key=True)
+    courseName = models.CharField(max_length=50, null=True)
+    numOfCredits = models.DecimalField(max_digits=2, decimal_places=1)
+    program = models.ForeignKey(Program_T, on_delete=models.CASCADE)
+    courseType = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.courseID
 
 
 

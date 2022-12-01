@@ -22,3 +22,6 @@ def createQb(request):
 def createCo(request):
     return render(request, 'dashboard/faculty/courseoutline/createCO.html')
 
+def viewAssessment(request):
+    return render(request, 'dashboard/faculty/questionbank/viewAssessment.html')
+

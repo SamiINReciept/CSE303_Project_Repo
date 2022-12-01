@@ -37,29 +37,29 @@ class STUDENT_T(models.Model):
         return self.StudentID
 
 
-class Employee_T(models.Model):
-    employeeID = models.CharField(max_length=4, primary_key=True)
-    employeeName = models.CharField(max_length=30, null=True)
-    email = models.CharField(max_length=30, null=True)
-    employeeType = models.CharField(max_length=1, null=True)
+class EMPLOYEE_T(models.Model):
+    EmployeeID = models.CharField(max_length=4, primary_key=True)
+    EmployeeName = models.CharField(max_length=30, null=True)
+    Email = models.CharField(max_length=30, null=True)
+    EmployeeType = models.CharField(max_length=1, null=True)
 
     class Meta:
             abstract = True
 
-class Dean_T(Employee_T):
+class DEAN_T(EMPLOYEE_T):
     #deanID = models.CharField(max_length=4, primary_key=True)
     startDate = models.CharField(max_length=15, default='N/A')
     endDate = models.CharField(max_length=15, default='N/A')
     school = models.ForeignKey(SCHOOL_T, on_delete=models.CASCADE)
 
-class Head_T(Employee_T):
+class HEAD_T(EMPLOYEE_T):
     #headID = models.CharField(max_length=4, primary_key=True)
     startDate = models.CharField(max_length=15,default='N/A')
     endDate = models.CharField(max_length=15,default='N/A')
     department = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
 
 
-class Faculty_T(Employee_T):
+class FACULTY_T(EMPLOYEE_T):
     #facultyID = models.IntegerField(primary_key=True)
     joinDate = models.DateField(null=True)
     department = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
@@ -67,7 +67,7 @@ class Faculty_T(Employee_T):
     def __str__(self):
        return self.firstName + " "+ self.lastName
 
-class Course_T(models.Model):
+class COURSE_T(models.Model):
     courseID = models.CharField(max_length=7, primary_key=True)
     courseName = models.CharField(max_length=50, null=True)
     numOfCredits = models.DecimalField(max_digits=2, decimal_places=1)

@@ -26,36 +26,44 @@ class EMPLOYEE_T(models.Model):
             
 
 
-class DEAN_T(EMPLOYEE_T):
-    DEmployeeID = models.CharField(max_length=5)
-    
-    
-    
-class DEPARTMENT_HEAD_T(EMPLOYEE_T):
-    DHEmployeeID = models.CharField(max_length=5)
- 
+
     
 
 class SCHOOL_T(models.Model):
     SchoolID = models.CharField(max_length=5, primary_key=True)
-    DEmployeeID = models.ForeignKey(DEAN_T, on_delete=models.CASCADE)
     SchoolName = models.CharField(max_length=50)
 
     def __str__(self):
         return self.SchoolID
+    
+    
+   
+class DEAN_T(EMPLOYEE_T):
+    SchoolID = models.ForeignKey(SCHOOL_T, on_delete=models.CASCADE)
+    DEmployeeID = models.CharField(max_length=5)
+    
+    def __str__(self):
+        return self.EmployeeName   
    
    
     
 class DEPARTMENT_T(models.Model):
     DepartmentID = models.CharField(max_length=5, primary_key=True)
     SchoolID = models.ForeignKey(SCHOOL_T, on_delete=models.CASCADE)
-    DHEmployeeID = models.ForeignKey(DEPARTMENT_HEAD_T, on_delete=models.CASCADE)
     DepartmentName = models.CharField(max_length=50)
 
     def __str__(self):
         return self.DepartmentID
     
+
     
+class DEPARTMENT_HEAD_T(EMPLOYEE_T):
+    DHEmployeeID = models.CharField(max_length=5)
+    DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
+ 
+    def __str__(self):
+        return self.EmployeeName
+   
 
 class PROGRAM_T(models.Model):
     ProgramID = models.AutoField(primary_key=True)

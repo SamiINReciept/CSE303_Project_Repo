@@ -79,5 +79,15 @@ class Course_T(models.Model):
     def __str__(self):
         return self.courseID
 
+class PLO_T(models.Model):
+    ploID = models.AutoField(primary_key=True)
+    ploNum = models.CharField(max_length=5)
+    details = models.CharField(max_length=50)
+    program = models.ForeignKey(Program_T, on_delete=models.CASCADE)
+   
+
+    def __str__(self):
+        return self.ploNum
+
 
 

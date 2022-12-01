@@ -72,7 +72,7 @@ class FACULTY_T(EMPLOYEE_T):
     DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
 
     def __str__(self):
-       return self.firstName + " "+ self.lastName
+       return self.EmployeeName 
    
    
 
@@ -82,7 +82,7 @@ class COURSE_T(models.Model):
     ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.courseID
+        return self.CourseID
     
     
     
@@ -90,7 +90,7 @@ class COCOURSE_T(models.Model):
     CoCourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.courseID
+        return self.CoCourseID
     
     
 
@@ -102,14 +102,35 @@ class PLO_T(models.Model):
     
    
     def __str__(self):
-        return self.ploNum
+        return self.PLONum
+
 
 
 class CLO_T(models.Model):
-    PlOID = models.AutoField(primary_key=True)
-    ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
-    PLONum = models.CharField(max_length=50)
+    ClOID = models.AutoField(primary_key=True)
+    PLOID = models.ForeignKey(PLO_T, on_delete=models.CASCADE)
+    CourseID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
+    CLONum = models.CharField(max_length=50)
+    CLODescription = models.CharField(max_length=50)
+    BloomC = models.CharField(max_length=50)
+    BloomP = models.CharField(max_length=50)
+    BloomA = models.CharField(max_length=50)
+    COPOCorrelation = models.CharField(max_length=50)
+   
+    def __str__(self):
+        return self.CLONum
+
+
+
+
+
+class QUESTION_T(models.Model):
+    QuestionID = models.AutoField(primary_key=True)
+    AssessmentID = models.ForeignKey(ASSESSMENT_T, on_delete=models.CASCADE)
+    CLOID = models.ForeignKey(CLO_T, on_delete=models.CASCADE)
+    QuestionNum = models.CharField(max_length=200)
     Details = models.CharField(max_length=200)
+    Marks = models.CharField(max_length=200)
     
    
     def __str__(self):

@@ -109,7 +109,7 @@ class PLO_T(models.Model):
 class CLO_T(models.Model):
     ClOID = models.AutoField(primary_key=True)
     PLOID = models.ForeignKey(PLO_T, on_delete=models.CASCADE)
-    CourseID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
+    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     CLONum = models.CharField(max_length=50)
     CLODescription = models.CharField(max_length=50)
     BloomC = models.CharField(max_length=50)
@@ -119,34 +119,68 @@ class CLO_T(models.Model):
    
     def __str__(self):
         return self.CLONum
+    
+    
+
+class SECTION_T(models.Model):
+    SectionID = models.CharField(primary_key=True)
+    FEmployeeID = models.ForeignKey(FACULTY_T, on_delete=models.CASCADE)
+    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
+    SectionNum = models.IntegerField(max_length=10)
+    Semester = models.IntegerField(max_length=10)
+    Year = models.IntegerField(max_length=10)
+
+    def __str__(self):
+        return self.SectionID
 
 
+
+
+class ASSESSMENT_T(models.Model):
+    AssessmentID = models.CharField(primary_key=True)
+    SectionID = models.ForeignKey(SECTION_T, on_delete=models.CASCADE)
+    AssessmentName = models.CharField(max_length=50)
+    TotalMarks = models.IntegerField(max_length=10)
+
+    def __str__(self):
+        return self.AssessmentName
 
 
 
 class QUESTION_T(models.Model):
-    QuestionID = models.AutoField(primary_key=True)
+    QuestionID = models.CharField(primary_key=True)
     AssessmentID = models.ForeignKey(ASSESSMENT_T, on_delete=models.CASCADE)
     CLOID = models.ForeignKey(CLO_T, on_delete=models.CASCADE)
     QuestionNum = models.CharField(max_length=200)
     Details = models.CharField(max_length=200)
-    Marks = models.CharField(max_length=200)
+    Marks = models.IntegerField(max_length=200)
     
    
     def __str__(self):
-        return self.ploNum
+        return self.QuestionID
 
 
 
 
 class EVALUATION(models.Model):
-    StudentID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
-    StudentID = models.AutoField(primary_key=True)
+    StudentID = models.ForeignKey(STUDENT_T, on_delete=models.CASCADE)
+    StudentID = models.CharField(primary_key=True)
     
-    ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
-    PLONum = models.CharField(max_length=50)
-    Details = models.CharField(max_length=200)
+    StudentID = models.CharField(primary_key=True)
+    QuestionID = models.ForeignKey(QUESTION_T, on_delete=models.CASCADE)
     
+    ObtainedMarks = models.CharField(max_length=50)
+
    
     def __str__(self):
-        return self.ploNum
+        return self.Evaluation
+
+
+class COURSE_T(models.Model):
+    CourseID = models.CharField(max_length=10, primary_key=True)
+    CourseName = models.CharField(max_length=50, null=True)
+    ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.CourseID
+    

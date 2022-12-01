@@ -27,12 +27,12 @@ class EMPLOYEE_T(models.Model):
 
 
 class DEAN_T(EMPLOYEE_T):
-    DEmployeeID = models.CharField(max_length=5, primary_key=True)
+    DEmployeeID = models.CharField(max_length=5)
     
     
     
 class DEPARTMENT_HEAD_T(EMPLOYEE_T):
-    DHEmployeeID = models.CharField(max_length=5, primary_key=True)
+    DHEmployeeID = models.CharField(max_length=5)
  
     
 
@@ -68,7 +68,7 @@ class PROGRAM_T(models.Model):
 
 
 class FACULTY_T(EMPLOYEE_T):
-    FEmployeeID = models.CharField(max_length=7, primary_key=True)
+    FEmployeeID = models.CharField(max_length=7)
     DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
 
     def __str__(self):

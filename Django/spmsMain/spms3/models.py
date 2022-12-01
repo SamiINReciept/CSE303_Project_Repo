@@ -16,10 +16,10 @@ class STUDENT_T(models.Model):
 
 
 class EMPLOYEE_T(models.Model):
-    EmployeeID = models.CharField(max_length=4, primary_key=True)
-    EmployeeName = models.CharField(max_length=30, null=True)
+    EmployeeID = models.CharField(max_length=5, primary_key=True)
+    EmployeeName = models.CharField(max_length=50, null=True)
     Email = models.CharField(max_length=30, null=True)
-    EmployeeType = models.CharField(max_length=1, null=True)
+    EmployeeType = models.CharField(max_length=2, null=True)
 
     class Meta:
             abstract = True
@@ -32,7 +32,7 @@ class DEAN_T(EMPLOYEE_T):
     
     
 class DEPARTMENT_HEAD_T(EMPLOYEE_T):
-    DHEmployeeID = models.CharField(max_length=4, primary_key=True)
+    DHEmployeeID = models.CharField(max_length=5, primary_key=True)
  
     
 
@@ -60,7 +60,7 @@ class DEPARTMENT_T(models.Model):
 class PROGRAM_T(models.Model):
     ProgramID = models.AutoField(primary_key=True)
     DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
-    ProgramName = models.CharField(max_length=70)
+    ProgramName = models.CharField(max_length=50)
     
     def __str__(self):
         return self.ProgramName
@@ -77,13 +77,13 @@ class FACULTY_T(EMPLOYEE_T):
    
 
 class COURSE_T(models.Model):
-    CourseID = models.CharField(max_length=7, primary_key=True)
+    CourseID = models.CharField(max_length=10, primary_key=True)
     CourseName = models.CharField(max_length=50, null=True)
-    numOfCredits = models.DecimalField(max_digits=2, decimal_places=1)
     ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.courseID
+    
     
     
 class COCOURSE_T(models.Model):    
@@ -95,14 +95,37 @@ class COCOURSE_T(models.Model):
     
 
 class PLO_T(models.Model):
-    ploID = models.AutoField(primary_key=True)
-    ploNum = models.CharField(max_length=5)
-    details = models.CharField(max_length=50)
-    program = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
+    PlOID = models.AutoField(primary_key=True)
+    ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
+    PLONum = models.CharField(max_length=50)
+    Details = models.CharField(max_length=200)
+    
    
+    def __str__(self):
+        return self.ploNum
 
+
+class CLO_T(models.Model):
+    PlOID = models.AutoField(primary_key=True)
+    ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
+    PLONum = models.CharField(max_length=50)
+    Details = models.CharField(max_length=200)
+    
+   
     def __str__(self):
         return self.ploNum
 
 
 
+
+class EVALUATION(models.Model):
+    StudentID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
+    StudentID = models.AutoField(primary_key=True)
+    
+    ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
+    PLONum = models.CharField(max_length=50)
+    Details = models.CharField(max_length=200)
+    
+   
+    def __str__(self):
+        return self.ploNum

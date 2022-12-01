@@ -4,15 +4,6 @@ from django.db import models
 
 
 
-class STUDENT_T(models.Model):
-    StudentID = models.CharField(max_length=7, primary_key=True)
-    StudentName = models.CharField(max_length=50, null=True)
-    Email = models.CharField(max_length=50, null=True)
-    ProgramID = models.CharField(max_length=50, null=True)
-
-    def __str__(self):
-        return self.StudentID
-
 
 
 class EMPLOYEE_T(models.Model):
@@ -25,9 +16,6 @@ class EMPLOYEE_T(models.Model):
             abstract = True
             
 
-
-
-    
 
 class SCHOOL_T(models.Model):
     SchoolID = models.CharField(max_length=5, primary_key=True)
@@ -72,6 +60,15 @@ class PROGRAM_T(models.Model):
     
     def __str__(self):
         return self.ProgramName
+
+class STUDENT_T(models.Model):
+    StudentID = models.CharField(max_length=7, primary_key=True)
+    StudentName = models.CharField(max_length=50, null=True)
+    Email = models.CharField(max_length=50, null=True)
+    ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.StudentID
 
 
 

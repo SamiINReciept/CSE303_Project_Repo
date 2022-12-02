@@ -4,17 +4,22 @@ from django.contrib import admin
 
 from .models import *
 
-admin.site.register(School_T)
-admin.site.register(Department_T)
-#admin.site.register(Employee_T)
-admin.site.register(Dean_T)
-admin.site.register(Head_T)
-admin.site.register(Faculty_T)
-admin.site.register(Program_T)
-admin.site.register(Student_T)
-admin.site.register(Course_T)
+admin.site.register(STUDENT_T)
+admin.site.register(DEAN_T)
+admin.site.register(DEPARTMENT_HEAD_T)
+admin.site.register(SCHOOL_T)
+admin.site.register(DEPARTMENT_T)
+admin.site.register(PROGRAM_T)
+admin.site.register(FACULTY_T)
+admin.site.register(COURSE_T)
+admin.site.register(COCOURSE_T)
 admin.site.register(PLO_T)
-
-
-
-
+admin.site.register(CLO_T)
+admin.site.register(SECTION_T)
+admin.site.register(ASSESSMENT_T)
+admin.site.register(QUESTION_T)
+admin.site.register(EVALUATION_T)
+admin.site.register(COURSE_PREREQUISITE_T)
+admin.site.register(COURSE_OUTLINE_T)
+admin.site.register(COURSE_LESSON_T)
+admin.site.register(COURSE_EVALUATION_T)

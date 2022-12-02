@@ -101,7 +101,7 @@ class PLO_T(models.Model):
     PlOID = models.CharField(max_length=10, primary_key=True)
     ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
     PLONum = models.CharField(max_length=50)
-    Details = models.CharField(max_length=200)
+    Details = models.CharField(max_length=2000)
     
    
     def __str__(self):

@@ -40,7 +40,8 @@ def createCo(request):
     display_dept= DEPARTMENT_T.objects.all()
     display_School= SCHOOL_T.objects.all()
     display_course = COURSE_T.objects.all()
-    return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Dept_T":display_dept,"School_T":display_School,"Course_T":display_course})
+    display_PLO = PLO_T.objects.all()
+    return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Dept_T":display_dept,"School_T":display_School,"Course_T":display_course,"PLO_T":display_PLO})
     
 def viewAssessment(request):
     return render(request, 'dashboard/faculty/questionbank/viewAssessment.html')

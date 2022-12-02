@@ -29,7 +29,7 @@ class DEAN_T(EMPLOYEE_T):
     #DEmployeeID = models.CharField(max_length=5)
     
     def __str__(self):
-        return self.EmployeeID   
+        return self.EmployeeName   
    
    
     
@@ -48,7 +48,7 @@ class DEPARTMENT_HEAD_T(EMPLOYEE_T):
     DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE, null=True)
  
     def __str__(self):
-        return self.EmployeeID
+        return self.EmployeeName
    
 
 class PROGRAM_T(models.Model):
@@ -75,7 +75,7 @@ class FACULTY_T(EMPLOYEE_T):
     DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
 
     def __str__(self):
-       return self.EmployeeID 
+       return self.EmployeeName 
    
    
 

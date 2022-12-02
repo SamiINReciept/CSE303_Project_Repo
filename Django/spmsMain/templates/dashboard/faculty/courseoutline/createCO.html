@@ -22,11 +22,11 @@
         }
     </script>
 
-<script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-</script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
 </head>
 
@@ -143,23 +143,37 @@
             <table class="table table-bordered">
                 <thead>
                     <tr style="width: 100%">
-                        <th scope="col" style="width: 20%"> <img src="{% static 'images/IUB-logo.png' %}" alt="IUB LOGO" height=100%
-                                width=100%></img></th>
+                        <th scope="col" style="width: 20%"> <img src="{% static 'images/IUB-logo.png' %}" alt="IUB LOGO"
+                                height=100% width=100%></img></th>
                         <th>
                             <div class="form-floating">
                                 <center>
+<<<<<<< Updated upstream
                                     <div class="input-group mb-3">
                                         <select class="form-select form-select-lg" aria-label="Default select example">
                                             <option selected disabled="true" value="Department">---Department---</option>
                                             {% for SCHOOL_T in spms3%}
                                             <option value="Department">{{SCHOOL_T.SchoolName}}</option>
+=======
+                                    <div class="input-group mb-3 text-center fs-4" style="width: 60%;">                                        
+                                        <select style="text-align:center;" class="form-control form-control-lg"
+                                            aria-label="Default select example" data- >
+                                            <option selected disabled="true" value="Department">---Department---
+                                            </option>
+                                            {% for display_dept in Dept_T %}
+                                            <option value="Department">{{display_dept.DepartmentName}}</option>
+>>>>>>> Stashed changes
                                             {% endfor %}
                                         </select>
                                     </div>
                                     &nbsp;
-                                    <div class="input-group mb-3">
-                                        <select class="form-select form-select-lg" aria-label="Default select example">
-                                            <option value="School">---</option>
+                                    <div class="input-group mb-3" style="width: 60%;">
+                                        <select style="text-align:center;" class="form-control form-control-lg"
+                                            aria-label="Default select example">
+                                            <option value="School">---School---</option>
+                                            {% for display_School in School_T %}
+                                            <option value="Department">{{display_School.SchoolName}}</option>
+                                            {% endfor %}
                                         </select>
                                     </div>
                                 </center>
@@ -173,76 +187,80 @@
 
             <table class="table table-bordered">
                 <form>
-                <thead>
-                    <tr>
-                        <th colspan="4" class="text-start fs-5" scope="col-1">Course Outline</th>
-                    </tr>
-                </thead>
+                    <thead>
+                        <tr>
+                            <th colspan="4" class="text-start fs-5" scope="col-1">Course Outline</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr style="width: 100%">
-                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Code</th>
+                    <tbody>
+                        <tr style="width: 100%">
+                            <th class="text-start" style="width: 20%" class="text-center fs-6">Course Code</th>
 
-                        <td class="text-start" style="width: 30%" class="text-center fs-6">
-                            <div class="input-group mb-3">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="Course_Code">---</option>
-                                </select>
-                            </div>
-                        </td>
+                            <td class="text-start" style="width: 30%" class="text-center fs-6">
+                                <div class="input-group mb-3">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="Course_Code">---</option>
+                                        {% for display_course in Course_T %}
+                                        <option value="Department">{{display_course.CourseID}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </td>
 
-                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Title</th>
+                            <th class="text-start" style="width: 20%" class="text-center fs-6">Course Title</th>
 
-                        <td class="text-start" style="width: 30%" class="text-center fs-6">
-                            <div class="input-group">
-                                <input type="course_title" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </td>
-                    </tr>
+                            <td class="text-start" style="width: 30%" class="text-center fs-6">
+                                <div class="input-group">
+                                    <input type="course_title" class="form-control" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </td>
+                        </tr>
 
-                    <tr class="text-start" style="width: 100%">
-                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Type</th>
+                        <tr class="text-start" style="width: 100%">
+                            <th class="text-start" style="width: 20%" class="text-center fs-6">Course Type</th>
 
-                        <td class="text-start" style="width: 30%" class="text-center fs-6">
-                            <div class="input-group">
-                                <input type="course_type" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </td>
+                            <td class="text-start" style="width: 30%" class="text-center fs-6">
+                                <div class="input-group">
+                                    <input type="course_type" class="form-control" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </td>
 
-                        <th class="text-start" style="width: 20%" class="text-center fs-6">Course Prerequisite (If any)
-                        </th>
+                            <th class="text-start" style="width: 20%" class="text-center fs-6">Course Prerequisite (If
+                                any)
+                            </th>
 
-                        <td class="text-start" style="width: 30%" class="text-center fs-6">
-                            <div class="input-group">
-                                <input type="course_prerequisite" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </td>
-                    </tr>
+                            <td class="text-start" style="width: 30%" class="text-center fs-6">
+                                <div class="input-group">
+                                    <input type="course_prerequisite" class="form-control"
+                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </td>
+                        </tr>
 
-                    <tr class="text-start" style="width: 100%">
-                        <th class="text-start" style="width: 20%" class="text-center fs-6">Credit Value</th>
+                        <tr class="text-start" style="width: 100%">
+                            <th class="text-start" style="width: 20%" class="text-center fs-6">Credit Value</th>
 
-                        <td class="text-start" style="width: 30%" class="text-center fs-6">
-                            <div class="input-group">
-                                <input type="credit_value" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </td>
+                            <td class="text-start" style="width: 30%" class="text-center fs-6">
+                                <div class="input-group">
+                                    <input type="credit_value" class="form-control" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </td>
 
-                        <th class="text-start" style="width: 20%" class="text-center fs-6">Contact Hours/Week</th>
+                            <th class="text-start" style="width: 20%" class="text-center fs-6">Contact Hours/Week</th>
 
-                        <td class="text-start" style="width: 30%" class="text-center fs-6">
-                            <div class="input-group">
-                                <input type="contact_hoursORweek" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </form>
+                            <td class="text-start" style="width: 30%" class="text-center fs-6">
+                                <div class="input-group">
+                                    <input type="contact_hoursORweek" class="form-control"
+                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </form>
             </table>
 
             <table class="table table-bordered">

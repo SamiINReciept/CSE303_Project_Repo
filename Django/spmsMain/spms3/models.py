@@ -25,7 +25,7 @@ class SCHOOL_T(models.Model):
     
    
 class DEAN_T(EMPLOYEE_T):
-    SchoolID = models.ForeignKey(SCHOOL_T, on_delete=models.CASCADE, default = 0)
+    SchoolID = models.ForeignKey(SCHOOL_T, on_delete=models.CASCADE, null=True)
     #DEmployeeID = models.CharField(max_length=5)
     
     def __str__(self):
@@ -39,13 +39,13 @@ class DEPARTMENT_T(models.Model):
     DepartmentName = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.DepartmentID
+        return self.DepartmentName
     
 
     
 class DEPARTMENT_HEAD_T(EMPLOYEE_T):
     #DHEmployeeID = models.CharField(max_length=5)
-    DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE, default = 0)
+    DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE, null=True)
  
     def __str__(self):
         return self.EmployeeID
@@ -98,14 +98,14 @@ class COCOURSE_T(models.Model):
     
 
 class PLO_T(models.Model):
-    PlOID = models.CharField(max_length=10, primary_key=True)
+    PLOID = models.CharField(max_length=10, primary_key=True)
     ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
     PLONum = models.CharField(max_length=50)
     Details = models.CharField(max_length=2000)
     
    
     def __str__(self):
-        return self.PLONum
+        return self.PLOID
 
 
 

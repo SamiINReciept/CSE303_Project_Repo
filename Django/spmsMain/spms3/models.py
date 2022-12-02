@@ -112,7 +112,7 @@ class PLO_T(models.Model):
 
 
 class CLO_T(models.Model):
-    ClOID = models.CharField(max_length=50, primary_key=True)
+    CLOID = models.CharField(max_length=50, primary_key=True)
     PLOID = models.ForeignKey(PLO_T, on_delete=models.CASCADE)
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     CLONum = models.CharField(max_length=50)

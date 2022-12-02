@@ -152,7 +152,7 @@
                                         <input type="text" list="deptList" placeholder="Department" class="form-control form-control-lg" style="text-align:center;">
                                         <datalist id="deptList">
                                             {% for display_dept in Dept_T %}
-                                                <option value="{{display_dept.DepartmentName}}">
+                                                <option>{{display_dept.DepartmentName}}</option>
                                             {% endfor %}
                                         </datalist>
                                     </div>
@@ -161,7 +161,7 @@
                                         <input type="text" list="schoolList" placeholder="School" class="form-control form-control-lg" style="text-align:center;">
                                         <datalist id="schoolList">
                                             {% for display_school in School_T %}
-                                            <option>"{{display_school.SchoolName}}"</option>
+                                            <option>{{display_school.SchoolName}}</option>
                                             {% endfor %}
                                         </select>
                                     </div>

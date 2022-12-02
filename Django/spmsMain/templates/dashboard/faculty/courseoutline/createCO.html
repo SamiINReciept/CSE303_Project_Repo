@@ -149,22 +149,19 @@
                             <div class="form-floating">
                                 <center>
                                     <div class="input-group mb-3 text-center fs-4" style="width: 60%;">
-                                        <select style="text-align:center;" class="form-control form-control-lg"
-                                            aria-label="Default select example" data->
-                                            <option selected disabled="true" value="Department">---Department---
-                                            </option>
+                                        <input type="text" list="deptList" placeholder="Department" class="form-control form-control-lg" style="text-align:center;">
+                                        <datalist id="deptList">
                                             {% for display_dept in Dept_T %}
-                                            <option value="Department">{{display_dept.DepartmentName}}</option>
+                                                <option value="{{display_dept.DepartmentName}}">
                                             {% endfor %}
-                                        </select>
+                                        </datalist>
                                     </div>
                                     &nbsp;
                                     <div class="input-group mb-3" style="width: 60%;">
-                                        <select style="text-align:center;" class="form-control form-control-lg"
-                                            aria-label="Default select example">
-                                            <option selected disabled="true" value="School">---School---</option>
+                                        <input type="text" list="schoolList" placeholder="School" class="form-control form-control-lg" style="text-align:center;">
+                                        <datalist id="schoolList">
                                             {% for display_school in School_T %}
-                                            <option value="Department">{{display_school.SchoolName}}</option>
+                                            <option>"{{display_school.SchoolName}}"</option>
                                             {% endfor %}
                                         </select>
                                     </div>
@@ -530,7 +527,7 @@
                             </select>
                         </td>
                         <td>
-                            <select  class="form-select" aria-label="Default select example">
+                            <select name="clo1P" class="form-select" aria-label="Default select example">
                                 <option data-toggle="tooltip" title="">---</option>
                                 <option data-toggle="tooltip" title="1-Observe">1</option>
                                 <option data-toggle="tooltip" title="2-Model">2</option>
@@ -541,7 +538,7 @@
                             </select>
                         </td>
                         <td>
-                            <select class="form-select" aria-label="Default select example">
+                            <select name="clo1A" class="form-select" aria-label="Default select example">
                                 <option data-toggle="tooltip" title="">---</option>
                                 <option data-toggle="tooltip" title="1-Receiving">1</option>
                                 <option data-toggle="tooltip" title="2-Responding">2</option>
@@ -552,7 +549,7 @@
                         </td>
                         <td>
                             <div class="input-group mb-3">
-                                <select class="form-select" aria-label="Default select example">
+                                <select name="plo1" class="form-select" aria-label="Default select example">
                                     <option value="1">--PLO--</option>
                                     {% for display_PLO in PLO_T %}
                                     <option value="Department">{{display_PLO.PLONum}}</option>
@@ -562,7 +559,7 @@
                         </td>
                         <td>
                             <div class="input-group mb-3">
-                                <select class="form-select" aria-label="Default select example">
+                                <select name="CP1" class="form-select" aria-label="Default select example">
                                     <option value="0">---</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>

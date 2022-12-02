@@ -71,7 +71,7 @@ class STUDENT_T(models.Model):
 
 
 class FACULTY_T(EMPLOYEE_T):
-    FEmployeeID = models.CharField(max_length=7)
+    #FEmployeeID = models.CharField(max_length=7)
     DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
 
     def __str__(self):

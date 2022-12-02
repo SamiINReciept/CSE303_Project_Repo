@@ -1,0 +1,30 @@
+<div class="input-group mb-3 text-center fs-4" style="width: 60%;">
+    <input name="dept" type="text" list="deptList" placeholder="Department"
+        class="form-control form-control-lg" style="text-align:center;">
+    <datalist id="deptList">
+        {% for display_dept in Dept_T %}
+        <option>{{display_dept.DepartmentName}}</option>
+        {% endfor %}
+    </datalist>
+</div>
+&nbsp;
+<div class="input-group mb-3" style="width: 60%;">
+    <input name="school" type="text" list="schoolList" placeholder="School"
+        class="form-control form-control-lg" style="text-align:center;">
+    <datalist id="schoolList">
+        {% for display_school in School_T %}
+        <option>{{display_school.SchoolName}}</option>
+        {% endfor %}
+    </datalist>
+</div>
+
+
+<div class="input-group mb-3">
+    <input name="plo1" type="text" list="ploList" placeholder="PLO" class="form-control form-control-lg"
+        style="text-align:center;">
+    <datalist id="ploList">
+        {% for display_PLO in PLO_T %}
+        <option>{{display_PLO.PLOID}} {{display_PLO.PLONum}}</option>
+        {% endfor %}
+    </datalist>
+</div>

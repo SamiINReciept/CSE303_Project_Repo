@@ -202,7 +202,7 @@ class COURSE_OUTLINE_T(models.Model):
     CourseObjective = models.CharField(max_length=2000)
     CourseContent = models.CharField(max_length=2000)
     AssessmentType = models.CharField(max_length=50)
-    ReferenceBook = models.CharField(max_length=50)
+    ReferenceBook = models.CharField(max_length=500)
 
     def __str__(self):
         return self.CourseID + " " + self.CourseTitle
@@ -210,11 +210,11 @@ class COURSE_OUTLINE_T(models.Model):
 
 
 class COURSE_LESSON_T(models.Model):
-    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
+    CourseID = models.ForeignKey(COURSE_OUTLINE_T, on_delete=models.CASCADE)
     Week = models.CharField(max_length=10, primary_key=True)
-    Topic = models.CharField(max_length=50)
-    TeachingStrategy = models.CharField(max_length=50)
-    AssessmentStrategy = models.CharField(max_length=50)
+    Topic = models.CharField(max_length=500)
+    TeachingStrategy = models.CharField(max_length=500)
+    AssessmentStrategy = models.CharField(max_length=500)
     CLOLevel = models.CharField(max_length=50)
 
     def __str__(self):
@@ -222,10 +222,10 @@ class COURSE_LESSON_T(models.Model):
 
 
 class COURSE_EVALUATION_T(models.Model):
-    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
-    AssessmentTools = models.CharField(max_length=10, primary_key=True)
+    CourseID = models.ForeignKey(COURSE_OUTLINE_T, on_delete=models.CASCADE)
+    AssessmentTools = models.CharField(max_length=100, primary_key=True)
     MarksDist = models.CharField(max_length=50)
-    BloomCategory = models.CharField(max_length=50)
+    BloomCategory = models.CharField(max_length=500)
 
 
     def __str__(self):

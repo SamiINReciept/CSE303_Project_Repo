@@ -148,16 +148,19 @@
                         <th>
                             <div class="form-floating">
                                 <center>
-                                    <div class="input-group" style="width: 70%; font-weight: bold;">
-                                        <input style="font-weight: bold; font-size: x-large; text-align: center;"
-                                            type="text" class="form-control" aria-label="Sizing example input"
-                                            aria-describedby="inputGroup-sizing-default">
+                                    <div class="input-group mb-3">
+                                        <select class="form-select form-select-lg" aria-label="Default select example">
+                                            <option selected disabled="true" value="Department">---Department---</option>
+                                            {% for SCHOOL_T in spms3%}
+                                            <option value="Department">{{SCHOOL_T.SchoolName}}</option>
+                                            {% endfor %}
+                                        </select>
                                     </div>
                                     &nbsp;
-                                    <div class="input-group" style="width: 70%; font-weight: bold;">
-                                        <input style="font-weight: bold; font-size: x-large; text-align: center;"
-                                            type="text" class="form-control" aria-label="Sizing example input"
-                                            aria-describedby="inputGroup-sizing-default">
+                                    <div class="input-group mb-3">
+                                        <select class="form-select form-select-lg" aria-label="Default select example">
+                                            <option value="School">---</option>
+                                        </select>
                                     </div>
                                 </center>
                                 <p class="text-center fs-4 pt-3">INDEPENDENT UNIVERSITY, BANGLADESH (IUB)</p>
@@ -181,9 +184,10 @@
                         <th class="text-start" style="width: 20%" class="text-center fs-6">Course Code</th>
 
                         <td class="text-start" style="width: 30%" class="text-center fs-6">
-                            <div class="input-group">
-                                <input name="course_code" type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default">
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="Course_Code">---</option>
+                                </select>
                             </div>
                         </td>
 

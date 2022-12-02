@@ -137,3 +137,8 @@ class COURSE_EVALUATION_TAdmin(admin.ModelAdmin):
     list_display = [field.name for field in COURSE_EVALUATION_T._meta.fields if field.name != "id"]
 
 admin.site.register(COURSE_EVALUATION_T, COURSE_EVALUATION_TAdmin)
+
+class CLOPLO_TAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in CLOPLO_T._meta.fields if field.name != "id"]
+
+admin.site.register(CLOPLO_T, CLOPLO_TAdmin)

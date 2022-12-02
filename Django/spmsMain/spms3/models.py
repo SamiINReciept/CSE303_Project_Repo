@@ -1,9 +1,6 @@
 from django.db import models
 
 
-
-
-
 class EMPLOYEE_T(models.Model):
     EmployeeID = models.CharField(max_length=5, primary_key=True)
     EmployeeName = models.CharField(max_length=50, null=True)
@@ -11,8 +8,7 @@ class EMPLOYEE_T(models.Model):
     EmployeeType = models.CharField(max_length=2, null=True)
 
     class Meta:
-            abstract = True
-            
+        abstract = True
 
 
 class SCHOOL_T(models.Model):
@@ -21,18 +17,16 @@ class SCHOOL_T(models.Model):
 
     def __str__(self):
         return self.SchoolID
-    
-    
-   
+
+
 class DEAN_T(EMPLOYEE_T):
     SchoolID = models.ForeignKey(SCHOOL_T, on_delete=models.CASCADE, null=True)
     #DEmployeeID = models.CharField(max_length=5)
-    
+
     def __str__(self):
-        return self.EmployeeName   
-   
-   
-    
+        return self.EmployeeName
+
+
 class DEPARTMENT_T(models.Model):
     DepartmentID = models.CharField(max_length=5, primary_key=True)
     SchoolID = models.ForeignKey(SCHOOL_T, on_delete=models.CASCADE)
@@ -40,24 +34,25 @@ class DEPARTMENT_T(models.Model):
 
     def __str__(self):
         return self.DepartmentName
-    
 
-    
+
 class DEPARTMENT_HEAD_T(EMPLOYEE_T):
     #DHEmployeeID = models.CharField(max_length=5)
-    DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE, null=True)
- 
+    DepartmentID = models.ForeignKey(
+        DEPARTMENT_T, on_delete=models.CASCADE, null=True)
+
     def __str__(self):
         return self.EmployeeName
-   
+
 
 class PROGRAM_T(models.Model):
     ProgramID = models.CharField(max_length=7, primary_key=True)
     DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
     ProgramName = models.CharField(max_length=50)
-    
+
     def __str__(self):
         return self.ProgramName
+
 
 class STUDENT_T(models.Model):
     StudentID = models.CharField(max_length=7, primary_key=True)
@@ -69,15 +64,13 @@ class STUDENT_T(models.Model):
         return self.StudentID
 
 
-
 class FACULTY_T(EMPLOYEE_T):
     #FEmployeeID = models.CharField(max_length=7)
     DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
 
     def __str__(self):
-       return self.EmployeeName 
-   
-   
+        return self.EmployeeName
+
 
 class COURSE_T(models.Model):
     CourseID = models.CharField(max_length=10, primary_key=True)
@@ -86,31 +79,27 @@ class COURSE_T(models.Model):
 
     def __str__(self):
         return self.CourseID
-    
-    
-    
-class COCOURSE_T(models.Model):    
+
+
+class COCOURSE_T(models.Model):
     CoCourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.CoCourseID
-    
-    
+
 
 class PLO_T(models.Model):
     PLOID = models.CharField(max_length=10, primary_key=True)
     ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
     PLONum = models.CharField(max_length=50)
     Details = models.CharField(max_length=2000)
-    
-   
+
     def __str__(self):
         return self.PLOID
 
 
-
 class CLO_T(models.Model):
-    CLOID = models.CharField(max_length=50, primary_key=True)
+    CLOID = models.AutoField(primary_key=True)
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     CLONum = models.CharField(max_length=50)
     CLODescription = models.CharField(max_length=2000)
@@ -118,40 +107,39 @@ class CLO_T(models.Model):
     BloomP = models.CharField(max_length=50)
     BloomA = models.CharField(max_length=50)
     COPOCorrelation = models.CharField(max_length=50)
-   
+
     def __str__(self):
         return self.CLONum
 
+
 class CLOPLO_T(models.Model):
-    CLOID = models.ForeignKey(CLO_T,on_delete=models.CASCADE)
+    CLOID = models.ForeignKey(CLO_T, on_delete=models.CASCADE)
     PLOID = models.ForeignKey(PLO_T, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self. CLOID +" "+ self.PLOID
+        return self. CLOID + " " + self.PLOID
 
-    
+
 class SECTION_T(models.Model):
     SectionID = models.CharField(max_length=10, primary_key=True)
     FEmployeeID = models.ForeignKey(FACULTY_T, on_delete=models.CASCADE)
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
-    SectionNum = models.IntegerField(null = True)
+    SectionNum = models.IntegerField(null=True)
     Semester = models.CharField(max_length=50)
-    Year = models.IntegerField(null = True)
+    Year = models.IntegerField(null=True)
 
     def __str__(self):
         return self.SectionID
-
 
 
 class ASSESSMENT_T(models.Model):
     AssessmentID = models.CharField(max_length=50, primary_key=True)
     SectionID = models.ForeignKey(SECTION_T, on_delete=models.CASCADE)
     AssessmentName = models.CharField(max_length=50)
-    TotalMarks = models.IntegerField(null = True)
+    TotalMarks = models.IntegerField(null=True)
 
     def __str__(self):
         return self.AssessmentName
-
 
 
 class QUESTION_T(models.Model):
@@ -161,27 +149,22 @@ class QUESTION_T(models.Model):
     QuestionNum = models.CharField(max_length=200)
     Details = models.CharField(max_length=200)
     Marks = models.IntegerField(null=True)
-    
-   
+
     def __str__(self):
         return self.QuestionID
-
-
 
 
 class EVALUATION_T(models.Model):
     StudentID = models.ForeignKey(STUDENT_T, on_delete=models.CASCADE)
     StudentID = models.CharField(max_length=50, primary_key=True)
-    
+
     QuestionID = models.CharField(max_length=50, primary_key=True)
     QuestionID = models.ForeignKey(QUESTION_T, on_delete=models.CASCADE)
-    
+
     ObtainedMarks = models.CharField(max_length=50)
 
-   
     def __str__(self):
-        return self. StudentID +" "+ self.QuestionID +" "+ self.ObtainedMarks
-    
+        return self. StudentID + " " + self.QuestionID + " " + self.ObtainedMarks
 
 
 class COURSE_PREREQUISITE_T(models.Model):
@@ -191,13 +174,14 @@ class COURSE_PREREQUISITE_T(models.Model):
 
     def __str__(self):
         return self.PrerequisiteID
-    
-    
-    
+
 
 class COURSE_OUTLINE_T(models.Model):
-    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     
+    CourseDept = models.CharField(max_length=100, default="Department")
+    CourseSchool = models.CharField(max_length=100, default="School")
+    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
+
     CourseTitle = models.CharField(max_length=50)
     CourseType = models.CharField(max_length=50)
     CreditValue = models.CharField(max_length=50)
@@ -210,7 +194,6 @@ class COURSE_OUTLINE_T(models.Model):
 
     def __str__(self):
         return self.CourseID + " " + self.CourseTitle
-
 
 
 class COURSE_LESSON_T(models.Model):
@@ -231,6 +214,5 @@ class COURSE_EVALUATION_T(models.Model):
     MarksDist = models.CharField(max_length=50)
     BloomCategory = models.CharField(max_length=500)
 
-
     def __str__(self):
-        return self.CourseID + " " + self.AssessmentTools   
+        return self.CourseID + " " + self.AssessmentTools

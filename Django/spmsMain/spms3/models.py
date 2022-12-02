@@ -101,7 +101,7 @@ class PLO_T(models.Model):
     PlOID = models.CharField(max_length=10, primary_key=True)
     ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
     PLONum = models.CharField(max_length=50)
-    Details = models.CharField(max_length=200)
+    Details = models.CharField(max_length=3000)
     
    
     def __str__(self):
@@ -114,7 +114,7 @@ class CLO_T(models.Model):
     PLOID = models.ForeignKey(PLO_T, on_delete=models.CASCADE)
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     CLONum = models.CharField(max_length=50)
-    CLODescription = models.CharField(max_length=2000)
+    CLODescription = models.CharField(max_length=3000)
     BloomC = models.CharField(max_length=50)
     BloomP = models.CharField(max_length=50)
     BloomA = models.CharField(max_length=50)

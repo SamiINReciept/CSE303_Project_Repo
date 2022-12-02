@@ -1,13 +1,9 @@
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login, logout
-from django.contrib import messages
+#from django.contrib.auth import authenticate, login, logout
+#from django.contrib import messages
 from spms3.models import SCHOOL_T
 
 # Create your views here.
-
-def show_object(request):
-    display_school= SCHOOL_T.objects.all()
-    return render(request,'dashboard/faculty/courseoutline/createCO.html',{'SCHOOL_T':display_school})
 
 def login(request):
     if request.method == 'POST':
@@ -41,7 +37,8 @@ def createQb(request):
     return render(request, 'dashboard/faculty/questionbank/createQB.html')
 
 def createCo(request):
-    return render(request, 'dashboard/faculty/courseoutline/createCO.html')
+    display_school= SCHOOL_T.objects.all()
+    return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"SCHOOL_T":display_school})
 
 def viewAssessment(request):
     return render(request, 'dashboard/faculty/questionbank/viewAssessment.html')

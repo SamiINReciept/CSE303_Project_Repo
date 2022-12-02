@@ -130,7 +130,7 @@ class SECTION_T(models.Model):
     FEmployeeID = models.ForeignKey(FACULTY_T, on_delete=models.CASCADE)
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     SectionNum = models.IntegerField(null = True)
-    Semester = models.IntegerField(null = True)
+    Semester = models.CharField(max_length=50)
     Year = models.IntegerField(null = True)
 
     def __str__(self):

@@ -151,8 +151,8 @@
                                     <div class="input-group mb-3">
                                         <select class="form-select form-select-lg" aria-label="Default select example">
                                             <option selected disabled="true" value="Department">---Department---</option>
-                                            {% for SCHOOL_T in spms3%}
-                                            <option value="Department">{{SCHOOL_T.SchoolName}}</option>
+                                            {% for display_school in SCHOOL_T %}
+                                            <option value="Department">{{display_school.SchoolName}}</option>
                                             {% endfor %}
                                         </select>
                                     </div>

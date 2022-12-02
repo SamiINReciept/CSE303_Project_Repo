@@ -166,7 +166,7 @@ class QUESTION_T(models.Model):
 
 
 
-class EVALUATION(models.Model):
+class EVALUATION_T(models.Model):
     StudentID = models.ForeignKey(STUDENT_T, on_delete=models.CASCADE)
     StudentID = models.CharField(primary_key=True)
     

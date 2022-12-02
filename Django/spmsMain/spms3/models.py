@@ -198,7 +198,7 @@ class COURSE_OUTLINE_T(models.Model):
     CourseType = models.CharField(max_length=50)
     CreditValue = models.CharField(max_length=50)
     ContactHourOrWeek = models.CharField(max_length=50)
-    CourseDescription = models.CharField(max_length=50)
+    CourseDescription = models.CharField(max_length=2000)
     CourseObjective = models.CharField(max_length=2000)
     CourseContent = models.CharField(max_length=2000)
     AssessmentType = models.CharField(max_length=50)

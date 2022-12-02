@@ -111,7 +111,6 @@ class PLO_T(models.Model):
 
 class CLO_T(models.Model):
     CLOID = models.CharField(max_length=50, primary_key=True)
-    PLOID = models.ForeignKey(PLO_T, on_delete=models.CASCADE)
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     CLONum = models.CharField(max_length=50)
     CLODescription = models.CharField(max_length=2000)
@@ -122,9 +121,15 @@ class CLO_T(models.Model):
    
     def __str__(self):
         return self.CLONum
-    
-    
 
+class CLOPLO_T(models.Model):
+    CLOID = models.ForeignKey(CLO_T,on_delete=models.CASCADE)
+    PLOID = models.ForeignKey(PLO_T, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self. CLOID +" "+ self.PLOID
+
+    
 class SECTION_T(models.Model):
     SectionID = models.CharField(max_length=10, primary_key=True)
     FEmployeeID = models.ForeignKey(FACULTY_T, on_delete=models.CASCADE)

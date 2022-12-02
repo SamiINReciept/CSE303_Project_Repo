@@ -1,6 +1,6 @@
 from django.shortcuts import render
-#from django.contrib.auth import authenticate, login, logout
-#from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 from spms3.models import SCHOOL_T
 
 # Create your views here.

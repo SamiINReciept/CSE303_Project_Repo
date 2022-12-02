@@ -25,11 +25,11 @@ class SCHOOL_T(models.Model):
     
    
 class DEAN_T(EMPLOYEE_T):
-    SchoolID = models.ForeignKey(SCHOOL_T, on_delete=models.CASCADE)
-    DEmployeeID = models.CharField(max_length=5)
+    SchoolID = models.ForeignKey(SCHOOL_T, on_delete=models.CASCADE, default = 0)
+    #DEmployeeID = models.CharField(max_length=5)
     
     def __str__(self):
-        return self.EmployeeName   
+        return self.EmployeeID   
    
    
     
@@ -44,11 +44,11 @@ class DEPARTMENT_T(models.Model):
 
     
 class DEPARTMENT_HEAD_T(EMPLOYEE_T):
-    DHEmployeeID = models.CharField(max_length=5)
-    DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
+    #DHEmployeeID = models.CharField(max_length=5)
+    DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE, default = 0)
  
     def __str__(self):
-        return self.EmployeeName
+        return self.EmployeeID
    
 
 class PROGRAM_T(models.Model):
@@ -71,11 +71,11 @@ class STUDENT_T(models.Model):
 
 
 class FACULTY_T(EMPLOYEE_T):
-    FEmployeeID = models.CharField(max_length=7)
+    #FEmployeeID = models.CharField(max_length=7)
     DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
 
     def __str__(self):
-       return self.EmployeeName 
+       return self.EmployeeID 
    
    
 
@@ -130,7 +130,7 @@ class SECTION_T(models.Model):
     FEmployeeID = models.ForeignKey(FACULTY_T, on_delete=models.CASCADE)
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     SectionNum = models.IntegerField(null = True)
-    Semester = models.IntegerField(null = True)
+    Semester = models.CharField(max_length=50)
     Year = models.IntegerField(null = True)
 
     def __str__(self):

@@ -100,7 +100,7 @@ class COCOURSE_T(models.Model):
     
 
 class PLO_T(models.Model):
-    PlOID = models.CharField(primary_key=True)
+    PlOID = models.CharField(max_length=10, primary_key=True)
     ProgramID = models.ForeignKey(PROGRAM_T, on_delete=models.CASCADE)
     PLONum = models.CharField(max_length=50)
     Details = models.CharField(max_length=200)
@@ -128,12 +128,12 @@ class CLO_T(models.Model):
     
 
 class SECTION_T(models.Model):
-    SectionID = models.CharField(primary_key=True)
+    SectionID = models.CharField(max_length=10, primary_key=True)
     FEmployeeID = models.ForeignKey(FACULTY_T, on_delete=models.CASCADE)
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
-    SectionNum = models.IntegerField(max_length=10)
-    Semester = models.IntegerField(max_length=10)
-    Year = models.IntegerField(max_length=10)
+    SectionNum = models.IntegerField(null = True)
+    Semester = models.IntegerField(null = True)
+    Year = models.IntegerField(null = True)
 
     def __str__(self):
         return self.SectionID
@@ -144,7 +144,7 @@ class ASSESSMENT_T(models.Model):
     AssessmentID = models.CharField(max_length=50, primary_key=True)
     SectionID = models.ForeignKey(SECTION_T, on_delete=models.CASCADE)
     AssessmentName = models.CharField(max_length=50)
-    TotalMarks = models.IntegerField(max_length=10)
+    TotalMarks = models.IntegerField(null = True)
 
     def __str__(self):
         return self.AssessmentName
@@ -226,8 +226,8 @@ class COURSE_LESSON_T(models.Model):
 class COURSE_EVALUATION_T(models.Model):
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     AssessmentTools = models.CharField(max_length=10, primary_key=True)
-    MarksDist = models.CharField(max_length=50)
-    BloomCategory = models.CharField(max_length=50)
+    MarksDist = models.CharField(max_length=10, max_length=50)
+    BloomCategory = models.CharField(max_length=10, max_length=50)
 
 
     def __str__(self):

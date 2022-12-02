@@ -192,7 +192,6 @@ class COURSE_PREREQUISITE_T(models.Model):
 
 class COURSE_OUTLINE_T(models.Model):
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
-    CourseID = models.CharField(max_length=10, primary_key=True)
     
     CourseTitle = models.CharField(max_length=50)
     CourseType = models.CharField(max_length=50)

@@ -5,10 +5,6 @@ from spms3.models import *
 
 # Create your views here.
 
-def show_object(request):
-    display_school= SCHOOL_T.objects.all()
-    return render(request,'dashboard/faculty/courseoutline/createCO.html',{"SCHOOL_T":display_school})
-
 def login(request):
     if request.method == 'POST':
         utype = (request.POST.get('usertype'))
@@ -41,16 +37,11 @@ def createQb(request):
     return render(request, 'dashboard/faculty/questionbank/createQB.html')
 
 def createCo(request):
-<<<<<<< Updated upstream
-    return render(request, 'dashboard/faculty/courseoutline/createCO.html')
-
-=======
     display_dept= DEPARTMENT_T.objects.all()
     display_School= SCHOOL_T.objects.all()
     display_course = COURSE_T.objects.all()
     return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Dept_T":display_dept,"School_T":display_School,"Course_T":display_course})
     
->>>>>>> Stashed changes
 def viewAssessment(request):
     return render(request, 'dashboard/faculty/questionbank/viewAssessment.html')
 

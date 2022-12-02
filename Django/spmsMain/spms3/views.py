@@ -5,6 +5,10 @@ from spms3.models import SCHOOL_T
 
 # Create your views here.
 
+def show_object(request):
+    display_school= SCHOOL_T.objects.all()
+    return render(request,'dashboard/faculty/courseoutline/createCO.html',{"SCHOOL_T":display_school})
+
 def login(request):
     if request.method == 'POST':
         utype = (request.POST.get('usertype'))
@@ -37,8 +41,7 @@ def createQb(request):
     return render(request, 'dashboard/faculty/questionbank/createQB.html')
 
 def createCo(request):
-    display_school= SCHOOL_T.objects.all()
-    return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"SCHOOL_T":display_school})
+    return render(request, 'dashboard/faculty/courseoutline/createCO.html')
 
 def viewAssessment(request):
     return render(request, 'dashboard/faculty/questionbank/viewAssessment.html')

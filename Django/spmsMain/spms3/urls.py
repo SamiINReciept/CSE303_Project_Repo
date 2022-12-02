@@ -14,4 +14,5 @@ urlpatterns = [
     path('createqb', views.createQb, name='create-qb'),
     path('createco', views.createCo, name='create-co'),
     path('viewassessment', views.viewAssessment, name='view-assessment'),
+    path('createco', views.show_object, name="show_object")
 ]

@@ -5,6 +5,11 @@ from spms3.models import *
 
 # Create your views here.
 
+display_dept = DEPARTMENT_T.objects.all()
+display_school = SCHOOL_T.objects.all()
+display_course = COURSE_T.objects.all()
+display_PLO = PLO_T.objects.all()
+
 
 def login(request):
     if request.method == 'POST':
@@ -69,12 +74,7 @@ def createCo(request):
 
         return render(request, 'dashboard/faculty/courseoutline/createCO.html')
 
-    display_dept = DEPARTMENT_T.objects.all()
-    display_school = SCHOOL_T.objects.all()
-    display_course = COURSE_T.objects.all()
-    display_PLO = PLO_T.objects.all()
-    return render(request, 'dashboard/faculty/courseoutline/createCO.html', {
-        "Dept_T": display_dept, "School_T": display_school, "Course_T": display_course, "PLO_T": display_PLO})
+    return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Dept_T": display_dept, "School_T": display_school, "Course_T": display_course, "PLO_T": display_PLO})
 
 
 def viewAssessment(request):

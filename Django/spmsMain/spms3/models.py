@@ -226,8 +226,8 @@ class COURSE_LESSON_T(models.Model):
 class COURSE_EVALUATION_T(models.Model):
     CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
     AssessmentTools = models.CharField(max_length=10, primary_key=True)
-    MarksDist = models.CharField(max_length=10, max_length=50)
-    BloomCategory = models.CharField(max_length=10, max_length=50)
+    MarksDist = models.CharField(max_length=50)
+    BloomCategory = models.CharField(max_length=50)
 
 
     def __str__(self):

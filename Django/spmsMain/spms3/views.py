@@ -5,6 +5,13 @@ from django.shortcuts import render
 # Create your views here.
 
 def login(request):
+    if request.method == 'POST':
+        utype = (request.POST.get('usertype'))
+        if utype == "faculty":
+            return render(request, 'dashboard/faculty/faculty_dashboard.html')
+        else:
+            return render(request, 'dashboard/student/student_dashboard.html')
+
     return render(request, 'signin/sign_in.html')
 
 def fDashboard(request):
@@ -15,6 +22,15 @@ def fCo(request):
 
 def fQb(request):
     return render(request, 'dashboard/faculty/faculty_QB.html')
+
+def sDashboard(request):
+    return render(request, 'dashboard/student/student_dashboard.html')
+
+def sCo(request):
+    return render(request, 'dashboard/student/student_CO.html')
+
+def sQb(request):
+    return render(request, 'dashboard/student/student_QB.html')
 
 def createQb(request):
     return render(request, 'dashboard/faculty/questionbank/createQB.html')

@@ -162,7 +162,7 @@
                                     <div class="input-group mb-3" style="width: 60%;">
                                         <select style="text-align:center;" class="form-control form-control-lg"
                                             aria-label="Default select example">
-                                            <option value="School">---School---</option>
+                                            <option selected disabled="true" value="School">---School---</option>
                                             {% for display_school in School_T %}
                                             <option value="Department">{{display_school.SchoolName}}</option>
                                             {% endfor %}
@@ -191,8 +191,8 @@
 
                             <td class="text-start" style="width: 30%" class="text-center fs-6">
                                 <div class="input-group mb-3">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option value="Course_Code">---</option>
+                                    <select style="text-align:center;" class="form-select" aria-label="Default select example">
+                                        <option selected disabled="true" value="Course_Code">---</option>
                                         {% for display_course in Course_T %}
                                         <option value="Department">{{display_course.CourseID}}</option>
                                         {% endfor %}

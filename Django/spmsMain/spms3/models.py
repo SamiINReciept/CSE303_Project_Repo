@@ -214,7 +214,7 @@ class COURSE_LESSON_T(models.Model):
     Week = models.CharField(max_length=10, primary_key=True)
     Topic = models.CharField(max_length=500)
     TeachingStrategy = models.CharField(max_length=500)
-    AssessmentStrategy = models.CharField(max_length=500)
+    AssessmentStrategy = models.CharField(max_length=500, null=True)
     CLOLevel = models.CharField(max_length=50)
 
     def __str__(self):

@@ -26,10 +26,10 @@ class SCHOOL_T(models.Model):
    
 class DEAN_T(EMPLOYEE_T):
     SchoolID = models.ForeignKey(SCHOOL_T, on_delete=models.CASCADE)
-    DEmployeeID = models.CharField(max_length=5)
+    #DEmployeeID = models.CharField(max_length=5)
     
     def __str__(self):
-        return self.EmployeeName   
+        return self.EmployeeID   
    
    
     
@@ -45,10 +45,10 @@ class DEPARTMENT_T(models.Model):
     
 class DEPARTMENT_HEAD_T(EMPLOYEE_T):
     DHEmployeeID = models.CharField(max_length=5)
-    DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
+    #DepartmentID = models.ForeignKey(DEPARTMENT_T, on_delete=models.CASCADE)
  
     def __str__(self):
-        return self.EmployeeName
+        return self.EmployeeID
    
 
 class PROGRAM_T(models.Model):

@@ -200,7 +200,7 @@ class COURSE_OUTLINE_T(models.Model):
 
 class COURSE_LESSON_T(models.Model):
     CourseID = models.ForeignKey(COURSE_OUTLINE_T, on_delete=models.CASCADE)
-    Week = models.CharField(max_length=10, primary_key=True)
+    Week = models.AutoField(primary_key=True)
     Topic = models.CharField(max_length=500)
     TeachingStrategy = models.CharField(max_length=500)
     AssessmentStrategy = models.CharField(max_length=500, null=True)

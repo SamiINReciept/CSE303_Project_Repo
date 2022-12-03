@@ -52,11 +52,12 @@ def createQb(request):
 
 def viewCo(request):
     course_outline = COURSE_OUTLINE_T.objects.all()
-    clo_table = CLO_T.objects.all()
-    course_lesson = COURSE_LESSON_T.objects.all()
-    course_evaluation = COURSE_EVALUATION_T.objects.all()
+    # clo_table = CLO_T.objects.all()
+    # course_lesson = COURSE_LESSON_T.objects.all()
+    # course_evaluation = COURSE_EVALUATION_T.objects.all()
+    # , {'clo_table': clo_table}, {'course_lesson': course_lesson}, {'course_eval': course_evaluation}
 
-    return render(request, 'dashboard/faculty/courseoutline/ViewCO.html', {'course_outline': course_outline}, {'clo_table': clo_table}, {'course_lesson': course_lesson}, {'course_eval': course_evaluation})
+    return render(request, 'dashboard/faculty/courseoutline/ViewCO.html', {'course_outline': course_outline})
 
 
 def createCo(request):

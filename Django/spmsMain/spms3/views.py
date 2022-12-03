@@ -72,8 +72,6 @@ def createCo(request):
 
         new_CourseOut.save()
 
-        return render(request, 'dashboard/faculty/courseoutline/createCO.html')
-
     return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Dept_T": display_dept, "School_T": display_school, "Course_T": display_course, "PLO_T": display_PLO})
 
 

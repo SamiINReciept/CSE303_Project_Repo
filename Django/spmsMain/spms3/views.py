@@ -69,8 +69,56 @@ def createCo(request):
         new_CourseOut = COURSE_OUTLINE_T(CourseDept=CourseDept, CourseSchool=CourseSchool, CourseCode=CourseCode, CourseTitle=CourseTitle, CourseType=CourseType, CoursePrereq=CoursePrereq, CreditValue=CreditValue,
                                          ContactHourOrWeek=ContactHourOrWeek, CourseDescription=CourseDescription, CourseObjective=CourseObjective, CourseContent=CourseContent, AssessmentType=AssessmentType,
                                          ReferenceBook=ReferenceBook)
-
         new_CourseOut.save()
+
+        CourseID = COURSE_T.objects.get(CourseID=CourseCode)
+
+        CLONum = request.POST['clo1']
+        CLODescription = request.POST['clo1desc']
+        BloomC = request.POST['clo1C']
+        BloomP = request.POST['clo1P']
+        BloomA = request.POST['clo1A']
+        COPOCorrelation = request.POST['CP1']
+        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription, BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
+        new_Clo.save()
+
+        CLONum = request.POST['clo2']
+        CLODescription = request.POST['clo2desc']
+        BloomC = request.POST['clo2C']
+        BloomP = request.POST['clo2P']
+        BloomA = request.POST['clo2A']
+        COPOCorrelation = request.POST['CP2']
+        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription, BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
+        new_Clo.save()
+
+        CLONum = request.POST['clo3']
+        CLODescription = request.POST['clo3desc']
+        BloomC = request.POST['clo3C']
+        BloomP = request.POST['clo3P']
+        BloomA = request.POST['clo3A']
+        COPOCorrelation = request.POST['CP3']
+        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription, BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
+        new_Clo.save()
+
+        CLONum = request.POST['clo4']
+        CLODescription = request.POST['clo4desc']
+        BloomC = request.POST['clo4C']
+        BloomP = request.POST['clo4P']
+        BloomA = request.POST['clo4A']
+        COPOCorrelation = request.POST['CP4']
+        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription, BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
+        new_Clo.save()
+
+        CLONum = request.POST['clo5']
+        CLODescription = request.POST['clo5desc']
+        BloomC = request.POST['clo5C']
+        BloomP = request.POST['clo5P']
+        BloomA = request.POST['clo5A']
+        COPOCorrelation = request.POST['CP5']
+        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription, BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
+        new_Clo.save()
+
+        
 
     return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Dept_T": display_dept, "School_T": display_school, "Course_T": display_course, "PLO_T": display_PLO})
 

@@ -106,7 +106,7 @@ class CLO_T(models.Model):
     BloomC = models.CharField(max_length=50)
     BloomP = models.CharField(max_length=50)
     BloomA = models.CharField(max_length=50)
-    PLOID = models.ForeignKey(PLO_T, on_delete=models.CASCADE, default="Null")
+    PLOAssessed = models.CharField(max_length=50, default="PLO")
     COPOCorrelation = models.CharField(max_length=50)
 
     def __str__(self):

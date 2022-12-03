@@ -49,8 +49,15 @@ def sQb(request):
 def createQb(request):
     return render(request, 'dashboard/faculty/questionbank/createQB.html')
 
+
 def viewCo(request):
-    return render(request, 'dashboard/faculty/courseoutline/ViewCO.html')
+    course_outline = COURSE_OUTLINE_T.objects.all()
+    clo_table = CLO_T.objects.all()
+    course_lesson = COURSE_LESSON_T.objects.all()
+    course_evaluation = COURSE_EVALUATION_T.objects.all()
+
+    return render(request, 'dashboard/faculty/courseoutline/ViewCO.html', {'course_outline': course_outline}, {'clo_table': clo_table}, {'course_lesson': course_lesson}, {'course_eval': course_evaluation})
+
 
 def createCo(request):
     if request.method == 'POST':
@@ -81,7 +88,8 @@ def createCo(request):
         BloomP = request.POST['clo1P']
         BloomA = request.POST['clo1A']
         COPOCorrelation = request.POST['CP1']
-        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription, BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
+        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription,
+                        BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
         new_Clo.save()
 
         CLONum = request.POST['clo2']
@@ -90,7 +98,8 @@ def createCo(request):
         BloomP = request.POST['clo2P']
         BloomA = request.POST['clo2A']
         COPOCorrelation = request.POST['CP2']
-        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription, BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
+        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription,
+                        BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
         new_Clo.save()
 
         CLONum = request.POST['clo3']
@@ -99,7 +108,8 @@ def createCo(request):
         BloomP = request.POST['clo3P']
         BloomA = request.POST['clo3A']
         COPOCorrelation = request.POST['CP3']
-        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription, BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
+        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription,
+                        BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
         new_Clo.save()
 
         CLONum = request.POST['clo4']
@@ -108,7 +118,8 @@ def createCo(request):
         BloomP = request.POST['clo4P']
         BloomA = request.POST['clo4A']
         COPOCorrelation = request.POST['CP4']
-        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription, BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
+        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription,
+                        BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
         new_Clo.save()
 
         CLONum = request.POST['clo5']
@@ -117,10 +128,9 @@ def createCo(request):
         BloomP = request.POST['clo5P']
         BloomA = request.POST['clo5A']
         COPOCorrelation = request.POST['CP5']
-        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription, BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
+        new_Clo = CLO_T(CLONum=CLONum, CourseID=CourseID, CLODescription=CLODescription,
+                        BloomC=BloomC, BloomP=BloomP, BloomA=BloomA, COPOCorrelation=COPOCorrelation)
         new_Clo.save()
-
-        
 
     return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Dept_T": display_dept, "School_T": display_school, "Course_T": display_course, "PLO_T": display_PLO})
 

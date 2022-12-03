@@ -178,11 +178,10 @@ class COURSE_PREREQUISITE_T(models.Model):
 
 
 class COURSE_OUTLINE_T(models.Model):
-    CourseID = models.AutoField(primary_key=True)
+    CourseID = models.ForeignKey(COURSE_T, on_delete=models.CASCADE)
 
     CourseDept = models.CharField(max_length=100, default="Department")
     CourseSchool = models.CharField(max_length=100, default="School")
-    CourseCode = models.CharField(max_length=20, default="Course")
     CourseTitle = models.CharField(max_length=50)
     CourseType = models.CharField(max_length=50)
     CoursePrereq = models.CharField(max_length=50, default= "None")
@@ -195,7 +194,7 @@ class COURSE_OUTLINE_T(models.Model):
     ReferenceBook = models.CharField(max_length=500)
 
     def __str__(self):
-        return self.CourseCode + " " + self.CourseTitle
+        return self.CourseID + " " + self.CourseTitle
 
 
 class COURSE_LESSON_T(models.Model):

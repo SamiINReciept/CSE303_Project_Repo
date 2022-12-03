@@ -49,6 +49,8 @@ def sQb(request):
 def createQb(request):
     return render(request, 'dashboard/faculty/questionbank/createQB.html')
 
+def viewCo(request):
+    return render(request, 'dashboard/faculty/courseoutline/ViewCO.html')
 
 def createCo(request):
     if request.method == 'POST':

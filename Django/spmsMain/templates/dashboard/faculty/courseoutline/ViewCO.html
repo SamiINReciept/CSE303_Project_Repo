@@ -136,6 +136,19 @@
             <h1>Create Course Outline</h1>
         </div>
 
+        <div class="bg-light shadow-sm mx-auto py-2 px-3"
+            style="width: 90%; height: auto; border-radius: 15px 15px 15px 15px;">
+            <div style="width: 30%;" class="d-flex flex-md-nowrap align-items-center pt-2 pb-3 border-bottom">
+                <input name="COID" type="text" list="courselist" placeholder="CourseID"
+                    class=" form-control form-control-lg" style="text-align:center;">
+                <datalist id="courselist">
+                    {% for display_course in Course_T %}
+                    <option>{{display_course.CourseID}}</option>
+                    {% endfor %}
+                </datalist>
+                <button type="submit" class="btn btn-primary mx-1">Search</button>
+            </div>
+        </div>
         <!-- <P>pura format boshbe ekhane hehe</P> -->
         <div class="bg-light shadow-sm mx-auto py-3 px-3"
             style="width: 90%; height: auto; border-radius: 15px 15px 15px 15px;">
@@ -149,9 +162,10 @@
                             <th>
                                 <div class="form-floating">
                                     <center>
-                                        <div name="viewdept" class="input-group mb-3 text-center fs-4" style="width: 60%;"></div>
-                                        &nbsp;
-                                        <div name="viewschool" class="input-group mb-3" style="width: 60%;"></div>
+                                        <div name="viewdept" class="input-group mb-3 mt-2 text-center fs-4"
+                                            style="width: 60%;">D</div>
+                                        <div name="viewschool" class="input-group mb-3 text-center fs-4"
+                                            style="width: 60%;">S</div>
                                     </center>
                                     <p class="text-center fs-4 pt-3">INDEPENDENT UNIVERSITY, BANGLADESH (IUB)</p>
                                 </div>

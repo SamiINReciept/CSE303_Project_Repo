@@ -4,25 +4,6 @@ from CMAS.models import *
 
 # Create your views here.
 
-def index(request):
-    return render(request,'signin/index.html')
-
-def signup(request):
-    if request.method == 'POST':
-
-        form = UserCreationForm()
-        if form.is_valid():
-            form.save()
-
-            return redirect('CMAS:index')
-    
-    else:
-        form = UserCreationForm()
-
-
-
-    return render(request,'signin/signup.html', {'form':form})
-
 
 def login(request):
     if request.method == 'POST':

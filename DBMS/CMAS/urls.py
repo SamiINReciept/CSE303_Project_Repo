@@ -4,9 +4,7 @@ from CMAS import views
 from django.contrib.auth import views as auth_view
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    # path('login', auth_view.LoginView.as_view(template='signin'), name='login'),
-    # path('', views.login, name='sign-in'),
+    path('', views.login, name='sign-in'),
     path('sign_in', views.login, name='sign-in'),
     path('faculty/dashboard', views.fDashboard, name='faculty-dashboard'),
     path('faculty/co', views.fCo, name='faculty-co'),

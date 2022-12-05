@@ -45,17 +45,14 @@ def createQb(request):
 
 
 def viewCo(request):
-
     return render(request, 'dashboard/faculty/courseoutline/ViewCO.html')
 
 
 def createCo(request):
-
     return render(request, 'dashboard/faculty/courseoutline/createCO.html',)
 
 
 def viewAssessment(request):
     return render(request, 'dashboard/faculty/questionbank/viewAssessment.html')
-from django.shortcuts import render
 
 # Create your views here.

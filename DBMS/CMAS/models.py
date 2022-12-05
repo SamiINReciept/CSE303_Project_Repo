@@ -14,7 +14,7 @@ class user(AbstractUser):
 
     role = models.CharField(max_length='50', choices=role.choices)
 
-    def save(self, *arg, **kwargs):
+    def save(self, *args, **kwargs):
         if not self.pk:
             self.role = self.base_role
-            return super().save(*arg, **kwargs)
+            return super().save(*args, **kwargs)

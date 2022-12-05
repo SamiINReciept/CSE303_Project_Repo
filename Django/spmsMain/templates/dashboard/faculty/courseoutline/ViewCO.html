@@ -805,39 +805,11 @@
         <div class="bg-light shadow-sm mx-auto py-2 px-3"
             style="width: 90%; height: auto; border-radius: 15px 15px 15px 15px;">
             <div class="d-flex flex-md-nowrap align-items-center pt-2 pb-3 border-bottom">
-                <a  href="javascript:void(0)" class="btn-download">Download PDF  </a>
+                <button type="button" class="btn btn-primary mx-1">Download Course Outline</button>
             </div>
         </div>
         <!-- <P>pura format boshbe ekhane hehe</P> -->
     </main>
-    <script src="js/jspdf.debug.js"></script>
-    <script src="js/html2canvas.min.js"></script>
-    <script src="js/html2pdf.min.js"></script>
-    <script>
-        const options = {
-            margin: 0.5,
-            filename: 'invoice.pdf',
-            image: {
-                type: 'jpeg',
-                quality: 500
-            },
-            html2canvas: {
-                scale: 1
-            },
-            jsPDF: {
-                unit: 'in',
-                format: 'letter',
-                orientation: 'portrait'
-            }
-        }
-
-        $('.btn-download').click(function (e) {
-            e.preventDefault();
-            const element = document.getElementById('invoice');
-            html2pdf().from(element).set(options).save();
-        });
-
-    </script>
 
 </body>
 

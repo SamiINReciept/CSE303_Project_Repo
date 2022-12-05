@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from spms3 import views
+from spms3 import views,
 
 urlpatterns = [
     path('', views.login, name='sign-in'),

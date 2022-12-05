@@ -9,9 +9,9 @@ def login(request):
     if request.method == 'POST':
         utype = (request.POST.get('usertype'))
         if utype == "faculty":
-            return render(request, 'templates/dashboard/faculty/faculty_dashboard.html')
+            return render(request, 'dashboard/faculty/faculty_dashboard.html')
         else:
-            return render(request, 'templates/dashboard/student/student_dashboard.html')
+            return render(request, 'dashboard/student/student_dashboard.html')
 
     return render(request, 'signin/sign_in.html')
 

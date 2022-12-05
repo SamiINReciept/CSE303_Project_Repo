@@ -4,7 +4,6 @@ from CMAS.models import *
 
 # Create your views here.
 
-
 def login(request):
     if request.method == 'POST':
         utype = (request.POST.get('usertype'))
@@ -15,10 +14,8 @@ def login(request):
 
     return render(request, 'signin/sign_in.html')
 
-
 def fDashboard(request):
     return render(request, 'dashboard/faculty/faculty_dashboard.html')
-
 
 def fCo(request):
     return render(request, 'dashboard/faculty/faculty_CO.html')

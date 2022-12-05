@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -74,7 +75,7 @@
         -webkit-overflow-scrolling: touch;
     }
 </style>
-<link href="dashboard.css" rel="stylesheet">
+<link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
 
 <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -113,7 +114,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr style="width: 100% text">
-                            <th scope="col" style="width: 7%"> <img src="../Course Outline/IUB LOGO.png" alt="IUB LOGO"
+                            <th scope="col" style="width: 7%"> <img src="{% static 'images/IUB-logo.png' %}" alt="IUB LOGO"
                                     height=100% width=100%></img> </th>
                             <th scope="col" style="width: 93%" class="text-center fs-4">
                                 INDEPENDENT UNIVERSITY, BANGLADESH (IUB)

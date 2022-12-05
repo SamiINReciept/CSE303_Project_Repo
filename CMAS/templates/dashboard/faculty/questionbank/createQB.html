@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -14,12 +15,13 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
 
-    <script>
-        function auto_grow(element) {
-            element.style.height = "5px";
-            element.style.height = (element.scrollHeight) + "px";
-        }
-    </script>
+        <script>
+            function auto_grow(element) {
+                element.style.height = "5px";
+                element.style.height = (element.scrollHeight) + "px";
+            }
+        </script>
+    
 </head>
 
 <style>
@@ -77,7 +79,7 @@
 
 
 <!-- Custom styles for this template -->
-<link href="dashboard.css" rel="stylesheet">
+<link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
 
 <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -118,7 +120,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr style="width: 100% text">
-                        <th scope="col" style="width: 7%"> <img src="../Course Outline/IUB LOGO.png" alt="IUB LOGO"
+                        <th scope="col" style="width: 7%"> <img src="{% static 'images/IUB-logo.png' %}" alt="IUB LOGO"
                                 height=100% width=100%></img> </th>
                         <th scope="col" style="width: 93%" class="text-center fs-4">
                             INDEPENDENT UNIVERSITY, BANGLADESH (IUB)
@@ -267,7 +269,7 @@
                 </tbody>
             </table>
             <div class="d-flex flex-md-nowrap align-items-center pt-2 pb-3 mb-3 border-bottom">
-                <a href="ViewAssessment.html"><button type="button" class="btn btn-success mx-1">View Assessment
+                <a href="/viewassessment"><button type="button" class="btn btn-success mx-1">View Assessment
                         Paper</button></a>
                 <button type="button" class="btn btn-primary mx-1">Download Assessment Paper</button>
                 <button type="button" class="btn btn-secondary mx-1">Store in Database</button>

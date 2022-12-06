@@ -208,9 +208,14 @@
 
                                 <td class="text-start" style="width: 30%" class="text-center fs-6">
                                     <div class="input-group">
-                                        <input name="Ctitle" type="course_title" class="form-control"
+                                        <input name="Ctitle" type="text" class="form-control"
                                             aria-label="Sizing example input"
                                             aria-describedby="inputGroup-sizing-default">
+                                        <datalist id="coursenamelist">
+                                            {% for display_course in Course %}
+                                            <option>{{display_course.coursedescription}}</option>
+                                            {% endfor %}
+                                        </datalist>
                                     </div>
                                 </td>
                             </tr>

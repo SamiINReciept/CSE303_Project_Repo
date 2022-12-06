@@ -154,7 +154,9 @@
                                             <input name="dept" type="text" list="deptList" placeholder="Department"
                                                 class="form-control form-control-lg" style="text-align:center;">
                                             <datalist id="deptList">
-                                                
+                                                {% for display_dept in display_debt %}
+                                                <option>{{display_dept.departmentname}}</option>
+                                                {% endfor %}
                                             </datalist>
                                         </div>
                                         &nbsp;
@@ -163,7 +165,9 @@
                                             <input name="school" type="text" list="schoolList" placeholder="School"
                                                 class="form-control form-control-lg" style="text-align:center;">
                                             <datalist id="schoolList">
-                                                
+                                                {% for display_school in display_school %}
+                                                <option>{{display_school.schoolname}}</option>
+                                                {% endfor %}
                                             </datalist>
                                         </div>
                                     </center>
@@ -192,7 +196,9 @@
                                         <input name="COID" type="text" list="courselist" placeholder="CourseID"
                                             class=" form-control form-control-lg" style="text-align:center;">
                                         <datalist id="courselist">
-                                            
+                                            {% for display_course in display_course %}
+                                            <option value="Department">{{display_course.coursename}}</option>
+                                            {% endfor %}
                                         </datalist>
                                     </div>
                                 </td>
@@ -577,7 +583,7 @@
                                     <input name="plo1" type="text" list="ploList" placeholder="PLO"
                                         class="form-control form-control-lg" style="text-align:center;">
                                     <datalist id="ploList">
-                                        
+
                                     </datalist>
                                 </div>
                             </td>
@@ -643,7 +649,7 @@
                                     <input name="plo2" type="text" list="ploList" placeholder="PLO"
                                         class="form-control form-control-lg" style="text-align:center;">
                                     <datalist id="ploList">
-                                        
+
                                     </datalist>
                                 </div>
                             </td>
@@ -710,7 +716,7 @@
                                     <input name="plo3" type="text" list="ploList" placeholder="PLO"
                                         class="form-control form-control-lg" style="text-align:center;">
                                     <datalist id="ploList">
-                                        
+
                                     </datalist>
                                 </div>
                             </td>
@@ -777,7 +783,7 @@
                                     <input name="plo4" type="text" list="ploList" placeholder="PLO"
                                         class="form-control form-control-lg" style="text-align:center;">
                                     <datalist id="ploList">
-                                        
+
                                     </datalist>
                                 </div>
                             </td>
@@ -844,7 +850,7 @@
                                     <input name="plo5" type="text" list="ploList" placeholder="PLO"
                                         class="form-control form-control-lg" style="text-align:center;">
                                     <datalist id="ploList">
-                                       
+
                                     </datalist>
                                 </div>
                             </td>

@@ -46,10 +46,37 @@ def viewCo(request):
 
 
 def createCo(request):
-    return render(request, 'dashboard/faculty/courseoutline/createCO.html',)
+    if request.method == 'POST':
+        # CourseDept = request.POST['dept']
+        # CourseSchool = request.POST['school']
+        # CourseCode = request.POST['COID']
+        # CourseTitle = request.POST['Ctitle']
+        # CourseType = request.POST['Ctype']
+        # CoursePrereq = request.POST['Cprerequisite']
+        # CreditValue = request.POST['creditvalue']
+        # ContactHourOrWeek = request.POST['contact']
+        # CourseDescription = request.POST['Cdescription']
+        # CourseObjective = request.POST['CObjective']
+        # CourseContent = request.POST['CContent']
+        # AssessmentType = request.POST['Ctitle']
+        # ReferenceBook = request.POST['reference']
+
+        # new_CourseOut = Course()
+
+        # new_CourseOut.save()
+
+        return render(request, 'dashboard/faculty/courseoutline/createCO.html')
+
+    display_dept = Department.objects.all()
+    display_school = School.objects.all()
+    display_course = Course.objects.all()
+    display_PLO = Plo.objects.all()
+    return render(request, 'dashboard/faculty/courseoutline/createCO.html', {
+        "display_dept":display_dept, "display_school":display_school, "isplay_course":display_course, "display_PLO":display_PLO})
 
 
 def viewAssessment(request):
+    
     return render(request, 'dashboard/faculty/questionbank/viewAssessment.html')
 
 # Create your views here.

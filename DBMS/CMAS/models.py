@@ -8,16 +8,6 @@
 from django.db import models
 
 
-class Employee(models.Model):
-    employeeid = models.IntegerField(db_column='EmployeeID', primary_key=True)  # Field name made lowercase.
-    employeename = models.CharField(db_column='EmployeeName', max_length=45, blank=True, null=True)  # Field name made lowercase.
-    email = models.CharField(db_column='Email', max_length=45, blank=True, null=True)  # Field name made lowercase.
-    employeetype = models.CharField(db_column='EmployeeType', max_length=45, blank=True, null=True)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'employee'
-
 class School(models.Model):
     schoolid = models.AutoField(db_column='SchoolID', primary_key=True)  # Field name made lowercase.
     schoolname = models.CharField(db_column='SchoolName', max_length=45, blank=True, null=True)  # Field name made lowercase.
@@ -26,6 +16,9 @@ class School(models.Model):
     class Meta:
         managed = False
         db_table = 'school'
+
+    def __str__(self):
+        return self.schoolname
         
 
 class Department(models.Model):
@@ -38,8 +31,23 @@ class Department(models.Model):
         managed = False
         db_table = 'department'
 
+    def __str__(self):
+        return self.departmentname
 
-class Dean(models.Model):
+
+class Employee(models.Model):
+    employeeid = models.IntegerField(db_column='EmployeeID', primary_key=True)  # Field name made lowercase.
+    employeename = models.CharField(db_column='EmployeeName', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    email = models.CharField(db_column='Email', max_length=45, blank=True, null=True)  # Field name made lowercase.
+    employeetype = models.CharField(db_column='EmployeeType', max_length=45, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'employee'
+        abstract = True
+
+
+class Dean(Employee):
     demployeeid = models.OneToOneField('Employee', models.DO_NOTHING, db_column='DemployeeID', primary_key=True)  # Field name made lowercase.
     schoolid = models.ForeignKey('School', models.DO_NOTHING, db_column='SchoolID', blank=True, null=True)  # Field name made lowercase.
 
@@ -47,7 +55,8 @@ class Dean(models.Model):
         managed = False
         db_table = 'dean'
 
-class DepartmentHead(models.Model):
+
+class DepartmentHead(Employee):
     dhemployeeid = models.OneToOneField('Employee', models.DO_NOTHING, db_column='DHEmployeeID', primary_key=True)  # Field name made lowercase.
     departmentid = models.ForeignKey(Department, models.DO_NOTHING, db_column='DepartmentID', blank=True, null=True)  # Field name made lowercase.
 
@@ -55,7 +64,8 @@ class DepartmentHead(models.Model):
         managed = False
         db_table = 'department_head'
 
-class Faculty(models.Model):
+
+class Faculty(Employee):
     femployeeid = models.OneToOneField(Employee, models.DO_NOTHING, db_column='FEmployeeID', primary_key=True)  # Field name made lowercase.
     departmentid = models.ForeignKey(Department, models.DO_NOTHING, db_column='DepartmentID', blank=True, null=True)  # Field name made lowercase.
 
@@ -63,6 +73,10 @@ class Faculty(models.Model):
         managed = False
         db_table = 'faculty'
 
+    def __str__(self):
+        return self.employeename
+
+        
 class Program(models.Model):
     programid = models.AutoField(db_column='ProgramID', primary_key=True)  # Field name made lowercase.
     departmentid = models.ForeignKey(Department, models.DO_NOTHING, db_column='DepartmentID', blank=True, null=True)  # Field name made lowercase.
@@ -72,6 +86,9 @@ class Program(models.Model):
     class Meta:
         managed = False
         db_table = 'program'
+
+    def __str__(self):
+        return self.programname
 
 class Plo(models.Model):
     ploid = models.AutoField(db_column='PLOID', primary_key=True)  # Field name made lowercase.
@@ -83,6 +100,10 @@ class Plo(models.Model):
         managed = False
         db_table = 'plo'
 
+    def __str__(self):
+        return self.programid + " " + self.plonum
+
+
 class Student(models.Model):
     studentid = models.CharField(db_column='StudentID', primary_key=True, max_length=50)  # Field name made lowercase.
     studentname = models.CharField(db_column='StudentName', max_length=75, blank=True, null=True)  # Field name made lowercase.
@@ -92,6 +113,10 @@ class Student(models.Model):
     class Meta:
         managed = False
         db_table = 'student'
+
+    def __str__(self):
+        return self.studentname
+
 
 class Course(models.Model):
     courseid = models.AutoField(db_column='CourseID', primary_key=True)  # Field name made lowercase.
@@ -103,6 +128,10 @@ class Course(models.Model):
     class Meta:
         managed = False
         db_table = 'course'
+
+    def __str__(self):
+        return self.coursename
+
 
 class Clo(models.Model):
     cloid = models.AutoField(db_column='CLOID', primary_key=True)  # Field name made lowercase.
@@ -119,6 +148,9 @@ class Clo(models.Model):
         managed = False
         db_table = 'clo'
 
+    def __str__(self):
+        return self.courseid + " " + self.clonum
+
 
 class Section(models.Model):
     sectionid = models.AutoField(db_column='SectionID', primary_key=True)  # Field name made lowercase.
@@ -132,6 +164,9 @@ class Section(models.Model):
         managed = False
         db_table = 'section'
 
+    def __str__(self):
+        return self.courseid + " " + self.sectionnum
+
 
 class Assessment(models.Model):
     assessmentid = models.AutoField(db_column='AssessmentID', primary_key=True)  # Field name made lowercase.
@@ -142,6 +177,9 @@ class Assessment(models.Model):
     class Meta:
         managed = False
         db_table = 'assessment'
+
+    def __str__(self):
+        return Section.sectionnum + " " + self.assessmentname
 
 
 class Question(models.Model):
@@ -156,6 +194,9 @@ class Question(models.Model):
         managed = False
         db_table = 'question'
 
+    def __str__(self):
+        return Assessment.assessmentname + " " + self.questionnumber
+
 class Evaluation(models.Model):
     studentid = models.IntegerField(db_column='StudentID', primary_key=True)  # Field name made lowercase.
     questionid = models.ForeignKey('Question', models.DO_NOTHING, db_column='QuestionID')  # Field name made lowercase.
@@ -165,6 +206,9 @@ class Evaluation(models.Model):
         managed = False
         db_table = 'evaluation'
         unique_together = (('studentid', 'questionid'),)
+
+    def __str__(self):
+        return self.studentid + " " + self.questionid
 
 
 class CourseOutline(models.Model):
@@ -186,6 +230,9 @@ class CourseOutline(models.Model):
         managed = False
         db_table = 'course_outline'
 
+    def __str__(self):
+        return self.coursecode
+
 
 class CourseLesson(models.Model):
     courseid = models.OneToOneField('CourseOutline', models.DO_NOTHING, db_column='CourseID', primary_key=True)  # Field name made lowercase.
@@ -200,6 +247,8 @@ class CourseLesson(models.Model):
         db_table = 'course_lesson'
         unique_together = (('courseid', 'week'),)
 
+    def __str__(self):
+        return self.courseid + " " + self.week
 
 
 class CourseEvaluation(models.Model):
@@ -212,6 +261,9 @@ class CourseEvaluation(models.Model):
         managed = False
         db_table = 'course_evaluation'
         unique_together = (('courseid', 'assessmenttools'),)
+
+    def __str__(self):
+        return self.courseid + " " + self.assessmenttools
 
 
 

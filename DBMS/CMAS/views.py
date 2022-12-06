@@ -46,7 +46,7 @@ def viewCo(request):
 
 
 def createCo(request):
-    if request.method == 'POST':
+    # if request.method == 'POST':
         # CourseDept = request.POST['dept']
         # CourseSchool = request.POST['school']
         # CourseCode = request.POST['COID']
@@ -65,7 +65,7 @@ def createCo(request):
 
         # new_CourseOut.save()
 
-        return render(request, 'dashboard/faculty/courseoutline/createCO.html')
+        # return render(request, 'dashboard/faculty/courseoutline/createCO.html')
 
     display_dept = Department.objects.all()
     display_school = School.objects.all()

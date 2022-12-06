@@ -206,7 +206,7 @@ class Evaluation(models.Model):
 
 
 class CourseOutline(models.Model):
-    courseid = models.OneToOneField(Course, models.DO_NOTHING, db_column='CourseID', primary_key=True)  # Field name made lowercase.
+    coid = models.AutoField(db_column='CoID', primary_key=True)  # Field name made lowercase.
     deptname = models.CharField(db_column='DeptName', max_length=80, blank=True, null=True)  # Field name made lowercase.
     schoolname = models.CharField(db_column='SchoolName', max_length=400, blank=True, null=True)  # Field name made lowercase.
     coursecode = models.CharField(db_column='CourseCode', max_length=45, blank=True, null=True)  # Field name made lowercase.
@@ -229,7 +229,7 @@ class CourseOutline(models.Model):
 
 
 class CourseLesson(models.Model):
-    courseid = models.OneToOneField('CourseOutline', models.DO_NOTHING, db_column='CourseID', primary_key=True)  # Field name made lowercase.
+    coid = models.OneToOneField(CourseOutline, models.DO_NOTHING, db_column='CoID', primary_key=True)  # Field name made lowercase.
     week = models.CharField(db_column='Week', max_length=45)  # Field name made lowercase.
     topic = models.CharField(db_column='Topic', max_length=45, blank=True, null=True)  # Field name made lowercase.
     teachingstrategy = models.CharField(db_column='TeachingStrategy', max_length=1000, blank=True, null=True)  # Field name made lowercase.
@@ -238,21 +238,21 @@ class CourseLesson(models.Model):
 
     class Meta:
         db_table = 'course_lesson'
-        unique_together = (('courseid', 'week'),)
+        unique_together = (('coid', 'week'),)
 
     def __str__(self):
         return self.courseid + " " + self.week
 
 
 class CourseEvaluation(models.Model):
-    courseid = models.OneToOneField(Course, models.DO_NOTHING, db_column='CourseID', primary_key=True)  # Field name made lowercase.
+    coid = models.OneToOneField(CourseOutline, models.DO_NOTHING, db_column='CoID', primary_key=True)  # Field name made lowercase.
     assessmenttools = models.CharField(db_column='AssessmentTools', max_length=45)  # Field name made lowercase.
     marksdistribution = models.CharField(db_column='MarksDistribution', max_length=45, blank=True, null=True)  # Field name made lowercase.
     bloomcategory = models.CharField(db_column='BloomCategory', max_length=100, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         db_table = 'course_evaluation'
-        unique_together = (('courseid', 'assessmenttools'),)
+        unique_together = (('coid', 'assessmenttools'),)
 
     def __str__(self):
         return self.courseid + " " + self.assessmenttools

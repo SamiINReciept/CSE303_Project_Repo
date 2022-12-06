@@ -151,9 +151,9 @@
                                 <div class="form-floating">
                                     <center>
                                         <div class="d-flex flex-md-nowrap align-items-center pt-3" style="width: 60%;">
-                                            <input name="dept" type="text" list="deptList" placeholder="Department"
-                                                class="form-control form-control-lg" style="text-align:center;">
-                                            <datalist id="deptList">
+                                            <input name="dept" type="text" list="Department" placeholder="Department"
+                                                class="form-control form-control-lg">
+                                            <datalist id="Department">
                                                 {% for display_dept in Department %}
                                                 <option>{{display_dept.departmentdetails}}</option>
                                                 {% endfor %}
@@ -162,9 +162,9 @@
                                         &nbsp;
                                         <div class="d-flex flex-md-nowrap align-items-center pb-3 border-bottom"
                                             style="width: 60%;">
-                                            <input name="school" type="text" list="schoolList" placeholder="School"
-                                                class="form-control form-control-lg" style="text-align:center;">
-                                            <datalist id="schoolList">
+                                            <input name="school" type="text" list="School" placeholder="School"
+                                                class="form-control form-control-lg">
+                                            <datalist id="School">
                                                 {% for display_school in School %}
                                                 <option>{{display_school.schooldetails}}</option>
                                                 {% endfor %}
@@ -193,9 +193,9 @@
 
                                 <td class="text-start" style="width: 30%" class="text-center fs-6">
                                     <div class="d-flex flex-md-nowrap align-items-center pt-2 pb-3">
-                                        <input name="COID" type="text" list="courselist" placeholder="CourseID"
-                                            class=" form-control form-control-lg" style="text-align:center;">
-                                        <datalist id="courselist">
+                                        <input name="COID" type="text" list="Course" placeholder="CourseID"
+                                            class=" form-control form-control-lg">
+                                        <datalist id="Course">
                                             {% for display_course in Course %}
                                             <option>{{display_course.coursename}}</option>
                                             {% endfor %}
@@ -208,10 +208,8 @@
 
                                 <td class="text-start" style="width: 30%" class="text-center fs-6">
                                     <div class="input-group">
-                                        <input name="Ctitle" type="text" class="form-control"
-                                            aria-label="Sizing example input"
-                                            aria-describedby="inputGroup-sizing-default">
-                                        <datalist id="coursenamelist">
+                                        <input name="Ctitle" type="text" list="Course"  placeholder="Course Name" class="form-control form-control-lg">
+                                        <datalist id="Course">
                                             {% for display_course in Course %}
                                             <option>{{display_course.coursedescription}}</option>
                                             {% endfor %}

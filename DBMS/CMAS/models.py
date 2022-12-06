@@ -212,7 +212,7 @@ class CourseOutline(models.Model):
     coursecode = models.CharField(db_column='CourseCode', max_length=45, blank=True, null=True)  # Field name made lowercase.
     coursetitle = models.CharField(db_column='CourseTitle', max_length=45, blank=True, null=True)  # Field name made lowercase.
     coursetype = models.CharField(db_column='CourseType', max_length=45, blank=True, null=True)  # Field name made lowercase.
-    courseprereq = models.CharField(max_length=45, blank=True, null=True)
+    courseprereq = models.CharField(db_column='CoursePrerequisite', max_length=45, blank=True, null=True) # Field name made lowercase.
     creditvalue = models.CharField(db_column='CreditValue', max_length=45, blank=True, null=True)  # Field name made lowercase.
     contacthour_week = models.CharField(db_column='ContactHour/Week', max_length=45, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
     coursedescription = models.CharField(db_column='CourseDescription', max_length=3000, blank=True, null=True)  # Field name made lowercase.

@@ -51,25 +51,26 @@ def viewCo(request):
 
 def createCo(request):
     # if request.method == 'POST':
-        # CourseDept = request.POST['dept']
-        # CourseSchool = request.POST['school']
-        # CourseCode = request.POST['COID']
-        # CourseTitle = request.POST['Ctitle']
-        # CourseType = request.POST['Ctype']
-        # CoursePrereq = request.POST['Cprerequisite']
-        # CreditValue = request.POST['creditvalue']
-        # ContactHourOrWeek = request.POST['contact']
-        # CourseDescription = request.POST['Cdescription']
-        # CourseObjective = request.POST['CObjective']
-        # CourseContent = request.POST['CContent']
-        # AssessmentType = request.POST['Ctitle']
-        # ReferenceBook = request.POST['reference']
+        
+    #     deptname = request.POST['dept']
+    #     schoolname = request.POST['school']
+    #     coursecode = request.POST['COID']
+    #     coursetitle = request.POST['Ctitle']
+    #     coursetype = request.POST['Ctype']
+    #     CoursePrereq = request.POST['Cprerequisite']
+    #     CreditValue = request.POST['creditvalue']
+    #     ContactHourOrWeek = request.POST['contact']
+    #     CourseDescription = request.POST['Cdescription']
+    #     CourseObjective = request.POST['CObjective']
+    #     CourseContent = request.POST['CContent']
+    #     AssessmentType = request.POST['Ctitle']
+    #     ReferenceBook = request.POST['reference']
 
-        # new_CourseOut = Course()
+    #     new_CourseOut = Course()
 
-        # new_CourseOut.save()
+    #     new_CourseOut.save()
 
-        # return render(request, 'dashboard/faculty/courseoutline/createCO.html')
+    #     return render(request, 'dashboard/faculty/courseoutline/createCO.html')
 
     return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Department":display_dept, "School":display_school, "Course":display_course, "PLO":display_PLO})
 

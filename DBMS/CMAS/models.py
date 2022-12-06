@@ -14,7 +14,6 @@ class School(models.Model):
     schooldetails = models.CharField(db_column='SchoolDetails', max_length=1000, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'school'
 
     def __str__(self):
@@ -28,7 +27,6 @@ class Department(models.Model):
     departmentdetails = models.CharField(db_column='DepartmentDetails', max_length=1000, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'department'
 
     def __str__(self):
@@ -42,7 +40,6 @@ class Employee(models.Model):
     employeetype = models.CharField(db_column='EmployeeType', max_length=45, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'employee'
 
     def __str__(self):
@@ -54,7 +51,6 @@ class Dean(models.Model):
     schoolid = models.ForeignKey('School', models.DO_NOTHING, db_column='SchoolID', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'dean'
 
     def __str__(self):
@@ -66,7 +62,6 @@ class DepartmentHead(models.Model):
     departmentid = models.ForeignKey(Department, models.DO_NOTHING, db_column='DepartmentID', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'department_head'
 
     def __str__(self):
@@ -78,7 +73,6 @@ class Faculty(models.Model):
     departmentid = models.ForeignKey(Department, models.DO_NOTHING, db_column='DepartmentID', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'faculty'
 
     def __str__(self):
@@ -92,12 +86,11 @@ class Program(models.Model):
     programdetail = models.CharField(db_column='ProgramDetail', max_length=1000, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'program'
 
     def __str__(self):
         return self.programname
-        
+
 
 class Plo(models.Model):
     ploid = models.AutoField(db_column='PLOID', primary_key=True)  # Field name made lowercase.
@@ -106,7 +99,6 @@ class Plo(models.Model):
     plodetail = models.CharField(db_column='PLODetail', max_length=2000, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'plo'
 
     def __str__(self):
@@ -120,7 +112,6 @@ class Student(models.Model):
     programid = models.ForeignKey(Program, models.DO_NOTHING, db_column='ProgramID', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'student'
 
     def __str__(self):
@@ -135,7 +126,6 @@ class Course(models.Model):
     coursedetail = models.CharField(db_column='CourseDetail', max_length=200, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'course'
 
     def __str__(self):
@@ -154,7 +144,6 @@ class Clo(models.Model):
     copocorrelation = models.CharField(db_column='COPOCorrelation', max_length=45, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'clo'
 
     def __str__(self):
@@ -170,7 +159,6 @@ class Section(models.Model):
     year = models.TextField(db_column='Year', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
-        managed = False
         db_table = 'section'
 
     def __str__(self):
@@ -184,7 +172,6 @@ class Assessment(models.Model):
     totalmarks = models.IntegerField(db_column='TotalMarks', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'assessment'
 
     def __str__(self):
@@ -200,7 +187,6 @@ class Question(models.Model):
     marks = models.IntegerField(db_column='Marks', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'question'
 
     def __str__(self):
@@ -212,7 +198,6 @@ class Evaluation(models.Model):
     obtainedmarks = models.IntegerField(db_column='ObtainedMarks', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'evaluation'
         unique_together = (('studentid', 'questionid'),)
 
@@ -236,7 +221,6 @@ class CourseOutline(models.Model):
     referencebook = models.CharField(db_column='ReferenceBook', max_length=3000, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'course_outline'
 
     def __str__(self):
@@ -252,7 +236,6 @@ class CourseLesson(models.Model):
     clolevel = models.CharField(db_column='CLOLevel', max_length=45, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'course_lesson'
         unique_together = (('courseid', 'week'),)
 
@@ -267,7 +250,6 @@ class CourseEvaluation(models.Model):
     bloomcategory = models.CharField(db_column='BloomCategory', max_length=100, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'course_evaluation'
         unique_together = (('courseid', 'assessmenttools'),)
 

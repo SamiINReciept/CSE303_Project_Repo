@@ -47,7 +47,7 @@ class Employee(models.Model):
         abstract = True
 
 
-class Dean(Employee):
+class Dean(models.Model):
     demployeeid = models.OneToOneField('Employee', models.DO_NOTHING, db_column='DemployeeID', primary_key=True)  # Field name made lowercase.
     schoolid = models.ForeignKey('School', models.DO_NOTHING, db_column='SchoolID', blank=True, null=True)  # Field name made lowercase.
 
@@ -56,7 +56,7 @@ class Dean(Employee):
         db_table = 'dean'
 
 
-class DepartmentHead(Employee):
+class DepartmentHead(models.Model):
     dhemployeeid = models.OneToOneField('Employee', models.DO_NOTHING, db_column='DHEmployeeID', primary_key=True)  # Field name made lowercase.
     departmentid = models.ForeignKey(Department, models.DO_NOTHING, db_column='DepartmentID', blank=True, null=True)  # Field name made lowercase.
 
@@ -65,7 +65,7 @@ class DepartmentHead(Employee):
         db_table = 'department_head'
 
 
-class Faculty(Employee):
+class Faculty(models.Model):
     femployeeid = models.OneToOneField(Employee, models.DO_NOTHING, db_column='FEmployeeID', primary_key=True)  # Field name made lowercase.
     departmentid = models.ForeignKey(Department, models.DO_NOTHING, db_column='DepartmentID', blank=True, null=True)  # Field name made lowercase.
 

@@ -50,27 +50,29 @@ def viewCo(request):
 
 
 def createCo(request):
-    # if request.method == 'POST':
+    if request.method == 'POST':
         
-    #     deptname = request.POST['dept']
-    #     schoolname = request.POST['school']
-    #     coursecode = request.POST['COID']
-    #     coursetitle = request.POST['Ctitle']
-    #     coursetype = request.POST['Ctype']
-    #     CoursePrereq = request.POST['Cprerequisite']
-    #     CreditValue = request.POST['creditvalue']
-    #     ContactHourOrWeek = request.POST['contact']
-    #     CourseDescription = request.POST['Cdescription']
-    #     CourseObjective = request.POST['CObjective']
-    #     CourseContent = request.POST['CContent']
-    #     AssessmentType = request.POST['Ctitle']
-    #     ReferenceBook = request.POST['reference']
+        deptname = request.POST['dept']
+        schoolname = request.POST['school']
+        coursecode = request.POST['COID']
+        coursetitle = request.POST['Ctitle']
+        coursetype = request.POST['Ctype']
+        courseprereq = request.POST['Cprerequisite']
+        creditvalue = request.POST['creditvalue']
+        contacthour_week = request.POST['contact']
+        coursedescription = request.POST['Cdescription']
+        courseobjective = request.POST['CObjective']
+        coursecontent = request.POST['CContent']
+        assessmenttype = request.POST['Ctitle']
+        referencebook = request.POST['reference']
 
-    #     new_CourseOut = Course()
+        new_CourseOut = Course(deptname = deptname, schoolname = schoolname, coursecode = coursecode, coursetitle = coursetitle, coursetype = coursetype, courseprereq = courseprereq, 
+        creditvalue = creditvalue, contacthour_week = contacthour_week, coursedescription = coursedescription, courseobjective = courseobjective, coursecontent = coursecontent,
+        assessmenttype = assessmenttype, referencebook = referencebook)
 
-    #     new_CourseOut.save()
+        new_CourseOut.save()
 
-    #     return render(request, 'dashboard/faculty/courseoutline/createCO.html')
+        return render(request, 'dashboard/faculty/courseoutline/createCO.html')
 
     return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Department":display_dept, "School":display_school, "Course":display_course, "PLO":display_PLO})
 

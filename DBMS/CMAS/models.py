@@ -102,7 +102,7 @@ class Plo(models.Model):
         db_table = 'plo'
 
     def __str__(self):
-        return self.programid + " " + self.plonum
+        return self.plonum
 
 
 class Student(models.Model):

@@ -208,8 +208,9 @@
 
                                 <td class="text-start" style="width: 30%" class="text-center fs-6">
                                     <div class="input-group">
-                                        <input name="Ctitle" type="text" list="Course"  placeholder="Course Name" class="form-control form-control-lg">
-                                        <datalist id="Course">
+                                        <input name="Ctitle" type="text" list="CourseName" placeholder="Course Name"
+                                            class="form-control form-control-lg">
+                                        <datalist id="CourseName">
                                             {% for display_course in Course %}
                                             <option>{{display_course.coursedescription}}</option>
                                             {% endfor %}

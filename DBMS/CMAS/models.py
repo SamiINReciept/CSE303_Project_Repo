@@ -44,7 +44,9 @@ class Employee(models.Model):
     class Meta:
         managed = False
         db_table = 'employee'
-        abstract = True
+
+    def __str__(self):
+        return self.employeename
 
 
 class Dean(models.Model):
@@ -55,6 +57,9 @@ class Dean(models.Model):
         managed = False
         db_table = 'dean'
 
+    def __str__(self):
+        return self.demployeeid
+
 
 class DepartmentHead(models.Model):
     dhemployeeid = models.OneToOneField('Employee', models.DO_NOTHING, db_column='DHEmployeeID', primary_key=True)  # Field name made lowercase.
@@ -63,6 +68,9 @@ class DepartmentHead(models.Model):
     class Meta:
         managed = False
         db_table = 'department_head'
+
+    def __str__(self):
+        return self.dhemployeeid
 
 
 class Faculty(models.Model):
@@ -74,7 +82,7 @@ class Faculty(models.Model):
         db_table = 'faculty'
 
     def __str__(self):
-        return self.employeename
+        return self.femployeeid
 
         
 class Program(models.Model):
@@ -89,6 +97,7 @@ class Program(models.Model):
 
     def __str__(self):
         return self.programname
+        
 
 class Plo(models.Model):
     ploid = models.AutoField(db_column='PLOID', primary_key=True)  # Field name made lowercase.

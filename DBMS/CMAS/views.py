@@ -52,26 +52,38 @@ def viewCo(request):
 def createCo(request):
     if request.method == 'POST':
         
-        Deptname = request.POST['dept']
-        Schoolname = request.POST['school']
-        Coursecode = request.POST['COID']
-        Coursetitle = request.POST['Ctitle']
-        Coursetype = request.POST['Ctype']
-        Courseprereq = request.POST['Cprerequisite']
-        Creditvalue = request.POST['creditvalue']
-        Contacthour_week = request.POST['contact']
-        Coursedescription = request.POST['Cdescription']
-        Courseobjective = request.POST['CObjective']
-        Coursecontent = request.POST['CContent']
-        Assessmenttype = request.POST['Ctitle']
-        Referencebook = request.POST['reference']
+        deptname = request.POST['dept']
+        schoolname = request.POST['school']
+        coursecode = request.POST['COID']
+        coursetitle = request.POST['Ctitle']
+        coursetype = request.POST['Ctype']
+        courseprereq = request.POST['Cprerequisite']
+        creditvalue = request.POST['creditvalue']
+        contacthour_week = request.POST['contact']
+        coursedescription = request.POST['Cdescription']
+        courseobjective = request.POST['CObjective']
+        coursecontent = request.POST['CContent']
+        assessmenttype = request.POST['Ctitle']
+        referencebook = request.POST['reference']
 
-        new_CourseOut = Course(deptname = Deptname, schoolname = Schoolname, coursecode = Coursecode, coursetitle = Coursetitle, coursetype = Coursetype, courseprereq = Courseprereq, 
-        creditvalue = Creditvalue, contacthour_week = Contacthour_week, coursedescription = Coursedescription, courseobjective = Courseobjective, coursecontent = Coursecontent,
-        assessmenttype = Assessmenttype, referencebook = Referencebook)
+        new_CourseOut = CourseOutline(deptname = deptname, schoolname = schoolname, coursecode = coursecode, coursetitle = coursetitle, coursetype = coursetype, courseprereq = courseprereq, 
+        creditvalue = creditvalue, contacthour_week = contacthour_week, coursedescription = coursedescription, courseobjective = courseobjective, coursecontent = coursecontent,
+        assessmenttype = assessmenttype, referencebook = referencebook)
 
         new_CourseOut.save()
 
+        clonum = request.POST['clo1']
+        clodescription = request.POST['clo1desc']
+        bloomc = request.POST['clo1C']
+        bloomp = request.POST['clo1P']
+        blooma = request.POST['clo1A']
+        ploassessed = request.POST['plo1']
+        copocorrelation = request.POST['CP1']
+
+        new_Clo = Clo(clonum = clonum, clodescription = clodescription,
+                        bloomc = bloomc, bloomp = bloomp, blooma = blooma, ploid=ploassessed, copocorrelation=copocorrelation)
+
+        new_Clo.save()
         # return render(request, 'dashboard/faculty/courseoutline/createCO.html')
 
     return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Department":display_dept, "School":display_school, "Course":display_course, "PLO":display_PLO})

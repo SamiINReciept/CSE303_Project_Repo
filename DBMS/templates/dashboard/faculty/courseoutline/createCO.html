@@ -583,7 +583,9 @@
                                     <input name="plo1" type="text" list="ploList" placeholder="PLO"
                                         class="form-control form-control-lg" style="text-align:center;">
                                     <datalist id="ploList">
-
+                                        {% for display_PLO in PLO %}
+                                        <option>{{display_PLO.PLONum}}</option>
+                                        {% endfor %}
                                     </datalist>
                                 </div>
                             </td>

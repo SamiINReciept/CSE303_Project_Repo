@@ -154,7 +154,7 @@
                                             <input name="dept" type="text" list="deptList" placeholder="Department"
                                                 class="form-control form-control-lg" style="text-align:center;">
                                             <datalist id="deptList">
-                                                {% for display_dept in display_debt %}
+                                                {% for display_dept in Department %}
                                                 <option>{{display_dept.departmentdetails}}</option>
                                                 {% endfor %}
                                             </datalist>
@@ -165,7 +165,7 @@
                                             <input name="school" type="text" list="schoolList" placeholder="School"
                                                 class="form-control form-control-lg" style="text-align:center;">
                                             <datalist id="schoolList">
-                                                {% for display_school in display_school %}
+                                                {% for display_school in School %}
                                                 <option>{{display_school.schooldetails}}</option>
                                                 {% endfor %}
                                             </datalist>
@@ -196,7 +196,7 @@
                                         <input name="COID" type="text" list="courselist" placeholder="CourseID"
                                             class=" form-control form-control-lg" style="text-align:center;">
                                         <datalist id="courselist">
-                                            {% for display_course in display_course %}
+                                            {% for display_course in Course %}
                                             <option value="Department">{{display_course.coursename}}</option>
                                             {% endfor %}
                                         </datalist>

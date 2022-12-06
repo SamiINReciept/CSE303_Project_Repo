@@ -1,8 +1,12 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render
 from CMAS.models import *
 
 # Create your views here.
+
+display_dept = Department.objects.all()
+display_school = School.objects.all()
+display_course = Course.objects.all()
+display_PLO = Plo.objects.all()
 
 def login(request):
     if request.method == 'POST':
@@ -67,12 +71,7 @@ def createCo(request):
 
         # return render(request, 'dashboard/faculty/courseoutline/createCO.html')
 
-    display_dept = Department.objects.all()
-    display_school = School.objects.all()
-    display_course = Course.objects.all()
-    display_PLO = Plo.objects.all()
-    return render(request, 'dashboard/faculty/courseoutline/createCO.html', {
-        "display_dept":display_dept, "display_school":display_school, "isplay_course":display_course, "display_PLO":display_PLO})
+    return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Department":display_dept, "School":display_school, "Course":display_course, "PLO":display_PLO})
 
 
 def viewAssessment(request):

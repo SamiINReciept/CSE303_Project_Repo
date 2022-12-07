@@ -142,8 +142,8 @@
                 <input name="COID" type="text" list="courselist" placeholder="CourseID"
                     class=" form-control form-control-lg" style="text-align:center;">
                 <datalist id="courselist">
-                    {% for display_course in Course_T %}
-                    <option>{{display_course.CourseID}}</option>
+                    {% for display_course in Course %}
+                    <option>{{display_course.coursename}}</option>
                     {% endfor %}
                 </datalist>
                 <button type="submit" class="btn btn-primary mx-1">Search</button>

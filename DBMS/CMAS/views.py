@@ -46,7 +46,7 @@ def createQb(request):
 
 
 def viewCo(request):
-    return render(request, 'dashboard/faculty/courseoutline/ViewCO.html')
+    return render(request, 'dashboard/faculty/courseoutline/ViewCO.html', {"Course":display_course})
 
 
 def createCo(request):

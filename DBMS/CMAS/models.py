@@ -134,8 +134,8 @@ class Course(models.Model):
 
 class Clo(models.Model):
     cloid = models.AutoField(db_column='CLOID', primary_key=True)  # Field name made lowercase.
-    ploid = models.ForeignKey('Plo', models.DO_NOTHING, db_column='PLOID')  # Field name made lowercase.
-    courseid = models.ForeignKey('Course', models.DO_NOTHING, db_column='CourseID')  # Field name made lowercase.
+    ploid = models.CharField(db_column='Ploid', max_length=100)  # Field name made lowercase.
+    # courseid = models.ForeignKey('CourseOutline', models.DO_NOTHING, db_column='CoID')  # Field name made lowercase.
     clonum = models.CharField(db_column='CLONum', max_length=45)  # Field name made lowercase.
     clodescription = models.CharField(db_column='CLODescription', max_length=2000)  # Field name made lowercase.
     bloomc = models.CharField(db_column='BloomC', max_length=45, blank=True, null=True)  # Field name made lowercase.
@@ -147,7 +147,7 @@ class Clo(models.Model):
         db_table = 'clo'
 
     def __str__(self):
-        return self.courseid + " " + self.clonum
+        return self.clonum
 
 
 class Section(models.Model):
@@ -162,7 +162,7 @@ class Section(models.Model):
         db_table = 'section'
 
     def __str__(self):
-        return self.courseid + " " + self.sectionnum
+        return self.sectionnum
 
 
 class Assessment(models.Model):

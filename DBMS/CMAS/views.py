@@ -63,16 +63,28 @@ def createCo(request):
         Coursedescription = request.POST['Cdescription']
         Courseobjective = request.POST['CObjective']
         Coursecontent = request.POST['CContent']
-        Assessmenttype = request.POST['Ctitle']
+        Assessmenttype = request.POST['atype1']
         Referencebook = request.POST['reference']
 
-        new_CourseOut = Course(deptname = Deptname, schoolname = Schoolname, coursecode = Coursecode, coursetitle = Coursetitle, coursetype = Coursetype, courseprereq = Courseprereq, 
+        new_CourseOut = CourseOutline(deptname = Deptname, schoolname = Schoolname, coursecode = Coursecode, coursetitle = Coursetitle, coursetype = Coursetype, courseprereq = Courseprereq, 
         creditvalue = Creditvalue, contacthour_week = Contacthour_week, coursedescription = Coursedescription, courseobjective = Courseobjective, coursecontent = Coursecontent,
         assessmenttype = Assessmenttype, referencebook = Referencebook)
 
         new_CourseOut.save()
+        
+        
+        clonum = request.POST['clo1']
+        clodescription = request.POST['clo1desc']
+        bloomc = request.POST['clo1C']
+        bloomp = request.POST['clo1P']
+        blooma = request.POST['clo1A']
+        ploassessed = request.POST['plo1']
+        copocorrelation = request.POST['CP1']
 
-        # return render(request, 'dashboard/faculty/courseoutline/createCO.html')
+        new_Clo = Clo(clonum = clonum, clodescription = clodescription,
+                        bloomc = bloomc, bloomp = bloomp, blooma = blooma, ploid=ploassessed, copocorrelation=copocorrelation)
+
+        new_Clo.save()
 
     return render(request, 'dashboard/faculty/courseoutline/createCO.html', {"Department":display_dept, "School":display_school, "Course":display_course, "PLO":display_PLO})
 
